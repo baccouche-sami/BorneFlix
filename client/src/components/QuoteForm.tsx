@@ -343,9 +343,9 @@ const QuoteForm = () => {
               <form onSubmit={handleSubmit} className="mt-8">
                 {/* Step 1: Informations personnelles */}
                 {currentStep === 1 && (
-                  <div className="space-y-8">
+                  <div className="space-y-8 animate-fadeIn">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      <div className="space-y-3">
+                      <div className="space-y-3 animate-slideUp animate-delay-100">
                         <Label htmlFor="nom" className="text-gray-700 font-medium">
                           Nom <span className="text-red-500">*</span>
                         </Label>
