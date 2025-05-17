@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import HeroAnimation from "./HeroAnimation";
 
 const HeroSection = () => {
   const sectionRef = useRef(null);
@@ -89,9 +88,35 @@ const HeroSection = () => {
                   className="w-full h-full object-cover scale-110 z-10 relative"
                 />
                 
-                {/* Animation 3D avec Three.js */}
-                <div className="absolute inset-0 z-20 opacity-30 mix-blend-screen">
-                  <HeroAnimation />
+                {/* Overlay avec des éléments animés */}
+                <div className="absolute inset-0 z-20 opacity-60 mix-blend-screen">
+                  <motion.div 
+                    className="absolute top-1/4 right-1/4 w-16 h-16 rounded-full bg-blue-400"
+                    animate={{ 
+                      y: [0, -10, 0], 
+                      opacity: [0.6, 1, 0.6],
+                      scale: [1, 1.1, 1]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                  <motion.div 
+                    className="absolute bottom-1/4 left-1/3 w-12 h-12 rounded-full bg-green-400"
+                    animate={{ 
+                      y: [0, 10, 0], 
+                      opacity: [0.4, 0.8, 0.4],
+                      scale: [1, 1.2, 1]
+                    }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  />
+                  <motion.div 
+                    className="absolute top-1/2 left-1/4 w-10 h-10 rounded-full bg-yellow-300"
+                    animate={{ 
+                      x: [0, 10, 0], 
+                      opacity: [0.5, 0.9, 0.5],
+                      scale: [1, 1.1, 1]
+                    }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  />
                 </div>
                 
                 {/* Fil décoratif */}
