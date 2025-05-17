@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-// Utilisation des images existantes dans le dossier public
-const chargerStationImage = "/images/ev-charging-1.jpg";
-const parkingChargerImage = "/images/apartment-parking.jpg";
-const evChargingImage = "/images/ev-charging-2.jpg";
+// Utilisation des images SVG existantes dans le projet
+import evchargingImage from "@/assets/evcharging.svg";
+import heroImage from "@/assets/hero.svg";
+import readyToPlugImage from "@/assets/readytoplug.svg";
 
 const HeroSection = () => {
   return (
@@ -71,30 +71,26 @@ const HeroSection = () => {
             <div className="lg:col-span-6 relative flex justify-center">
               <div className="relative">
                 {/* Main image */}
-                <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+                <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white p-6 bg-white">
                   <img 
-                    src={chargerStationImage} 
+                    src={evchargingImage} 
                     alt="Borne de recharge pour véhicule électrique en copropriété" 
-                    className="w-full h-auto object-cover"
-                    style={{ maxHeight: '500px' }}
+                    className="w-full h-auto object-contain"
+                    style={{ maxHeight: '450px' }}
                   />
                 </div>
                 
-                {/* Floating small images */}
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-xl overflow-hidden border-4 border-white shadow-lg">
-                  <img 
-                    src={parkingChargerImage}
-                    alt="Installation en parking souterrain" 
-                    className="w-full h-full object-cover"
-                  />
+                {/* Floating elements */}
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-xl overflow-hidden border-4 border-white shadow-lg bg-primary/10 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center">
+                    <i className="fas fa-leaf text-secondary text-2xl"></i>
+                  </div>
                 </div>
                 
-                <div className="absolute -top-6 -right-6 w-32 h-32 rounded-xl overflow-hidden border-4 border-white shadow-lg">
-                  <img 
-                    src={evChargingImage}
-                    alt="Véhicule en charge" 
-                    className="w-full h-full object-cover"
-                  />
+                <div className="absolute -top-6 -right-6 w-32 h-32 rounded-xl overflow-hidden border-4 border-white shadow-lg bg-accent/10 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center">
+                    <i className="fas fa-plug text-accent text-2xl"></i>
+                  </div>
                 </div>
                 
                 {/* Certification badge */}
