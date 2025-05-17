@@ -4,32 +4,31 @@ import { useGLTF, OrbitControls, Sphere, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
 function ChargingCable() {
-  const ref = useRef<THREE.Mesh>(null!);
+  const ref = useRef<THREE.Group>(null!);
   
-  // Animation de la courbe du câble
+  // Animation simple du groupe
   useFrame((state) => {
     if (ref.current) {
       ref.current.rotation.y = Math.sin(state.clock.getElapsedTime() * 0.2) * 0.2;
       ref.current.position.y = Math.sin(state.clock.getElapsedTime() * 0.5) * 0.1;
     }
   });
-
-  // Création d'une courbe pour représenter un câble
-  const curve = new THREE.CatmullRomCurve3([
-    new THREE.Vector3(0, 0, 0),
-    new THREE.Vector3(0.5, 0.3, 0.3),
-    new THREE.Vector3(1, 0.5, 0.5),
-    new THREE.Vector3(1.5, 0.4, 0.2),
-    new THREE.Vector3(2, 0, 0),
-  ]);
-
-  const points = curve.getPoints(50);
-  const geometry = new THREE.BufferGeometry().setFromPoints(points);
   
   return (
-    <mesh ref={ref} position={[-1, 0, 0]}>
-      <primitive object={new THREE.Line(geometry, new THREE.LineBasicMaterial({ color: '#00aaff', linewidth: 5 }))} />
-    </mesh>
+    <group ref={ref} position={[-1, 0, 0]}>
+      <mesh position={[0.5, 0.2, 0]}>
+        <boxGeometry args={[0.2, 0.1, 0.1]} />
+        <meshStandardMaterial color="#00aaff" />
+      </mesh>
+      <mesh position={[1, 0.3, 0]}>
+        <boxGeometry args={[0.2, 0.1, 0.1]} />
+        <meshStandardMaterial color="#00aaff" />
+      </mesh>
+      <mesh position={[1.5, 0.2, 0]}>
+        <boxGeometry args={[0.2, 0.1, 0.1]} />
+        <meshStandardMaterial color="#00aaff" />
+      </mesh>
+    </group>
   );
 }
 
