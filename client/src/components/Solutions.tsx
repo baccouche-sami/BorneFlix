@@ -101,7 +101,7 @@ const Solutions = () => {
             </div>
           </Card>
           
-          <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-accent hover:shadow-xl transition-shadow duration-300">
+          <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-accent hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px]">
             <div className="h-56 overflow-hidden bg-accent/5 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent z-10"></div>
               <img 
@@ -241,7 +241,7 @@ const Solutions = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-xl shadow-md">
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
               <h3 className="text-lg font-semibold mb-3 text-[#003566] flex items-center">
                 <i className="fas fa-question-circle text-secondary mr-3"></i>
                 Quelle solution privilégier ?
@@ -251,7 +251,7 @@ const Solutions = () => {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-md">
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
               <h3 className="text-lg font-semibold mb-3 text-[#003566] flex items-center">
                 <i className="fas fa-question-circle text-secondary mr-3"></i>
                 Comment ne pas faire supporter le coût à la copropriété ?
@@ -261,7 +261,7 @@ const Solutions = () => {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-md">
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
               <h3 className="text-lg font-semibold mb-3 text-[#003566] flex items-center">
                 <i className="fas fa-question-circle text-secondary mr-3"></i>
                 Comment financer le projet ?
@@ -271,7 +271,7 @@ const Solutions = () => {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-md">
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
               <h3 className="text-lg font-semibold mb-3 text-[#003566] flex items-center">
                 <i className="fas fa-question-circle text-secondary mr-3"></i>
                 Quelles démarches auprès du syndic ?
@@ -283,51 +283,87 @@ const Solutions = () => {
           </div>
         </div>
         
-        {/* Video section */}
-        <div className="text-center bg-[#003566]/5 rounded-2xl p-8 mb-12">
+        {/* Testimonial section */}
+        <div className="bg-[#003566]/5 rounded-2xl p-8 mb-16">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-block mb-6 bg-white rounded-full shadow-md px-6 py-3 text-primary font-medium">
-              <i className="fas fa-play-circle mr-2"></i> Fonctionnement de nos solutions
+            <div className="text-center mb-8">
+              <div className="inline-block bg-secondary/10 text-secondary px-4 py-1 rounded-full text-sm font-medium mb-4">
+                TÉMOIGNAGES CLIENTS
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2 text-[#003566]">Ce que disent nos clients</h2>
             </div>
-            <h3 className="text-2xl font-bold mb-6 text-[#003566]">Découvrez notre solution en vidéo</h3>
-            <div className="relative pt-[56.25%] rounded-xl overflow-hidden bg-gray-900 shadow-xl">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <i className="fas fa-play text-primary text-2xl ml-1"></i>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <div className="flex space-x-4 mb-4">
+                  <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center text-secondary text-2xl">
+                    <i className="fas fa-user"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg text-[#003566]">Jean Dupont</h4>
+                    <p className="text-gray-500 text-sm">Syndic de copropriété, Paris 15ème</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  "L'installation s'est déroulée parfaitement, sans perturbation pour les résidents. Le système est fiable et la facturation est transparente. Nous sommes très satisfaits."
+                </p>
+                <div className="flex text-yellow-400">
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <div className="flex space-x-4 mb-4">
+                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary text-2xl">
+                    <i className="fas fa-user"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg text-[#003566]">Marie Laurent</h4>
+                    <p className="text-gray-500 text-sm">Présidente de conseil syndical, Lyon</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  "Toute la résidence est satisfaite de l'installation. Le système de gestion dynamique de la puissance fonctionne parfaitement et nous n'avons eu aucun problème d'alimentation."
+                </p>
+                <div className="flex text-yellow-400">
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star-half-alt"></i>
                 </div>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Call to action */}
-        <div className="bg-gradient-to-r from-primary to-[#003566] rounded-2xl shadow-xl overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="p-8 lg:p-12">
-              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                Prêt à équiper votre copropriété ?
-              </h3>
+        {/* CTA Section */}
+        <div className="bg-gradient-to-r from-[#003566] to-[#1a4d85] rounded-2xl p-8 md:p-12 mb-12 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-bl-full"></div>
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-tr-full"></div>
+          
+          <div className="relative z-10">
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className="text-3xl font-bold mb-6 text-white">Prêt à équiper votre copropriété ?</h2>
               <p className="text-white/90 mb-8">
-                Nos experts sont à votre disposition pour étudier gratuitement votre projet et vous proposer une solution adaptée à vos besoins.
+                Demandez dès maintenant votre devis personnalisé et bénéficiez d'un accompagnement sur-mesure pour l'installation de bornes de recharge dans votre copropriété.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#devis">
-                  <Button size="lg" className="bg-white hover:bg-gray-100 text-primary font-medium py-5 px-8 rounded-full transition-all duration-300 hover:shadow-lg">
+                  <Button className="bg-white text-[#003566] hover:bg-gray-100 font-medium py-3 px-8 rounded-full transition-all duration-300 shadow-lg shadow-blue-900/20 hover:translate-y-[-2px] w-full sm:w-auto">
                     Demander un devis gratuit
                   </Button>
                 </a>
-                <a href="tel:0123456789" className="inline-flex items-center text-white border border-white/40 rounded-full px-6 py-3 hover:bg-white/10 transition-colors">
-                  <i className="fas fa-phone-alt mr-2"></i>
-                  <span>Nous contacter</span>
+                <a href="#contact">
+                  <Button variant="outline" className="border-2 border-white text-white hover:bg-white/10 font-medium py-3 px-8 rounded-full transition-all duration-300 w-full sm:w-auto">
+                    Nous contacter <i className="fas fa-arrow-right ml-2"></i>
+                  </Button>
                 </a>
               </div>
-            </div>
-            <div className="hidden lg:block lg:pr-8">
-              <img 
-                src={import.meta.env.DEV ? '/src/assets/borne-recharge.jpg' : '/images/reelles/borne-recharge.jpg'}
-                alt="Borne de recharge véhicule électrique" 
-                className="rounded-xl shadow-lg"
-              />
             </div>
           </div>
         </div>
