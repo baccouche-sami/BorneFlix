@@ -63,7 +63,7 @@ const Advantages = () => {
             <div className="p-6 text-white">
               <h3 className="text-2xl font-bold mb-2 text-center">Votre solution inclut</h3>
             </div>
-            <img src="/images/reelles/installation.jpg" alt="Fonctionnalités incluses" className="w-full h-48 object-cover" />
+            <img src={import.meta.env.DEV ? '/src/assets/installation.jpg' : '/images/reelles/installation.jpg'} alt="Fonctionnalités incluses" className="w-full h-48 object-cover" />
           </div>
         </div>
         
