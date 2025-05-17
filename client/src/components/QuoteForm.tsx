@@ -285,35 +285,36 @@ const QuoteForm = () => {
   };
 
   return (
-    <section id="devis" className="py-24 bg-gradient-to-b from-gray-50 to-gray-100">
+    <section id="devis" className="py-24 bg-gradient-to-r from-[#f8fafc] to-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-block bg-secondary/10 text-secondary px-4 py-1 rounded-full text-sm font-medium mb-4">
-            DEVIS GRATUIT
+          <div className="inline-block bg-[#8dc63f]/10 text-[#8dc63f] px-6 py-2 rounded-full text-sm font-medium mb-4">
+            DEMANDE DE DEVIS GRATUIT
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Demandez votre devis personnalisé</h2>
-          <p className="text-lg text-gray-700">
-            Remplissez le formulaire ci-dessous pour obtenir une proposition adaptée aux besoins de votre copropriété.
-            <br />Notre équipe vous contactera dans les 24h.
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003566]">Demandez votre devis personnalisé</h2>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Remplissez le formulaire ci-dessous pour obtenir une proposition adaptée 
+            aux besoins spécifiques de votre copropriété.
+            <br />Notre équipe d'experts vous contactera dans les 24h.
           </p>
           
-          {/* Form benefits badges */}
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <div className="bg-white rounded-full px-4 py-2 shadow-sm flex items-center text-sm font-medium text-gray-700">
-              <div className="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center mr-2">
-                <i className="fas fa-check text-secondary text-xs"></i>
+          {/* Form benefits badges - improved design */}
+          <div className="flex flex-wrap justify-center gap-6 mt-10">
+            <div className="bg-white rounded-full px-6 py-3 shadow-md flex items-center text-sm font-medium text-gray-800 hover:shadow-lg transition-shadow duration-300">
+              <div className="w-8 h-8 bg-[#8dc63f]/15 rounded-full flex items-center justify-center mr-3 text-[#8dc63f]">
+                <i className="fas fa-check"></i>
               </div>
               Sans engagement
             </div>
-            <div className="bg-white rounded-full px-4 py-2 shadow-sm flex items-center text-sm font-medium text-gray-700">
-              <div className="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center mr-2">
-                <i className="fas fa-check text-secondary text-xs"></i>
+            <div className="bg-white rounded-full px-6 py-3 shadow-md flex items-center text-sm font-medium text-gray-800 hover:shadow-lg transition-shadow duration-300">
+              <div className="w-8 h-8 bg-[#8dc63f]/15 rounded-full flex items-center justify-center mr-3 text-[#8dc63f]">
+                <i className="fas fa-clock"></i>
               </div>
               Réponse sous 24h
             </div>
-            <div className="bg-white rounded-full px-4 py-2 shadow-sm flex items-center text-sm font-medium text-gray-700">
-              <div className="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center mr-2">
-                <i className="fas fa-check text-secondary text-xs"></i>
+            <div className="bg-white rounded-full px-6 py-3 shadow-md flex items-center text-sm font-medium text-gray-800 hover:shadow-lg transition-shadow duration-300">
+              <div className="w-8 h-8 bg-[#8dc63f]/15 rounded-full flex items-center justify-center mr-3 text-[#8dc63f]">
+                <i className="fas fa-user-check"></i>
               </div>
               100% personnalisé
             </div>
