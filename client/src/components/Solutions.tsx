@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
+import { motion } from "framer-motion";
 // Utilisation des SVG existants dans le projet
 import evchargingImage from "@/assets/evcharging.svg";
 import featuresGridImage from "@/assets/features-grid.svg";
@@ -28,11 +30,12 @@ const Solutions = () => {
         {/* Solution tabs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-primary hover:shadow-xl transition-shadow duration-300">
-            <div className="h-48 overflow-hidden bg-primary/5">
+            <div className="h-56 overflow-hidden bg-primary/5 relative">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#003566]/20 to-transparent z-10"></div>
               <img 
-                src={import.meta.env.DEV ? '/src/assets/borne-recharge.jpg' : '/images/reelles/borne-recharge.jpg'} 
+                src={import.meta.env.DEV ? '/attached_assets/pexels-kindelmedia-9800030.jpg' : '/images/reelles/pexels-kindelmedia-9800030.jpg'} 
                 alt="Infrastructure de recharge collective en copropriété"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
               />
             </div>
             <div className="p-6">
@@ -64,11 +67,12 @@ const Solutions = () => {
           </Card>
           
           <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-secondary hover:shadow-xl transition-shadow duration-300">
-            <div className="h-48 overflow-hidden bg-secondary/5">
+            <div className="h-56 overflow-hidden bg-secondary/5 relative">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#8dc63f]/20 to-transparent z-10"></div>
               <img 
-                src={import.meta.env.DEV ? '/src/assets/signature-contrat.jpg' : '/images/reelles/signature-contrat.jpg'} 
+                src={import.meta.env.DEV ? '/attached_assets/images-4.png' : '/images/reelles/images-4.png'} 
                 alt="Solution individuelle de recharge en copropriété"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
               />
             </div>
             <div className="p-6">
@@ -100,11 +104,12 @@ const Solutions = () => {
           </Card>
           
           <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-accent hover:shadow-xl transition-shadow duration-300">
-            <div className="h-48 overflow-hidden bg-accent/5">
+            <div className="h-56 overflow-hidden bg-accent/5 relative">
+              <div className="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent z-10"></div>
               <img 
-                src={import.meta.env.DEV ? '/src/assets/installation.jpg' : '/images/reelles/installation.jpg'} 
+                src={import.meta.env.DEV ? '/attached_assets/images-1.png' : '/images/reelles/images-1.png'} 
                 alt="Pré-équipement pour bornes de recharge"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
               />
             </div>
             <div className="p-6">
@@ -204,11 +209,12 @@ const Solutions = () => {
             </div>
             
             <div className="lg:col-span-7 order-1 lg:order-2 relative bg-primary/5 p-6">
-              <div className="flex items-center justify-center h-full">
+              <div className="relative flex items-center justify-center h-full overflow-hidden">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 via-primary/20 to-secondary/30 rounded-lg blur-xl animate-pulse"></div>
                 <img 
-                  src={import.meta.env.DEV ? '/src/assets/station-solaire.jpg' : '/images/reelles/station-solaire.jpg'} 
+                  src={import.meta.env.DEV ? '/attached_assets/images-13.png' : '/images/reelles/images-13.png'} 
                   alt="Infrastructure de recharge collective en copropriété" 
-                  className="max-w-full h-auto object-contain"
+                  className="relative max-w-full h-auto object-contain rounded-lg transform hover:scale-102 transition-transform duration-700"
                   style={{ maxHeight: '400px' }}
                 />
               </div>
