@@ -769,15 +769,14 @@ const QuoteForm = () => {
                     {currentStep > 1 ? `Étape ${currentStep-1} complétée` : "Commencez votre demande"}
                   </div>
                   
-                  <div className="flex space-x-4">
+                  <div className="flex flex-col md:flex-row gap-4 md:space-x-4">
                     {currentStep > 1 && (
                       <Button
                         type="button"
-                        variant="outline"
                         onClick={prevStep}
-                        className="px-8 py-6 border-gray-300 hover:bg-gray-50 transition-colors"
+                        className="bg-white text-[#003566] border border-[#003566] hover:bg-gray-50 py-6 px-8 rounded-lg transition-all duration-300 font-medium"
                       >
-                        <i className="fas fa-arrow-left mr-2"></i> Précédent
+                        <i className="fas fa-arrow-left mr-3"></i> Précédent
                       </Button>
                     )}
                     
@@ -792,17 +791,17 @@ const QuoteForm = () => {
                     ) : (
                       <Button
                         type="submit"
-                        className="bg-secondary hover:bg-green-600 text-white font-medium px-8 py-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-secondary/30"
+                        className="bg-[#8dc63f] hover:bg-[#7ab32f] text-white py-6 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 font-medium"
                         disabled={isSubmitting}
                       >
                         {isSubmitting ? (
                           <>
-                            <i className="fas fa-circle-notch fa-spin mr-2"></i>
+                            <div className="animate-spin w-5 h-5 border-2 border-white border-r-transparent rounded-full mr-3"></div>
                             Envoi en cours...
                           </>
                         ) : (
                           <>
-                            Demander mon devis gratuit <i className="fas fa-check-circle ml-2"></i>
+                            Demander mon devis gratuit <i className="fas fa-check-circle ml-3"></i>
                           </>
                         )}
                       </Button>
