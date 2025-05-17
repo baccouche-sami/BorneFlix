@@ -71,19 +71,9 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                {/* Animation interactive - visible on larger screens */}
-                <div className="hidden lg:block rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
+                {/* Animation interactive pour tous les appareils */}
+                <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
                   <ChargingStationAnimation />
-                </div>
-                
-                {/* Main image - visible on mobile/tablet */}
-                <div className="lg:hidden rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
-                  <img 
-                    src={import.meta.env.DEV ? '/src/assets/station-solaire.jpg' : '/images/reelles/station-solaire.jpg'} 
-                    alt="Borne de recharge avec panneaux solaires pour véhicule électrique en copropriété" 
-                    className="w-full h-auto object-cover"
-                    style={{ maxHeight: '450px' }}
-                  />
                 </div>
                 
                 {/* Floating elements with animations */}
