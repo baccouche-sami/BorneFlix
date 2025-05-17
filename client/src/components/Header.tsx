@@ -61,22 +61,54 @@ const Header = () => {
 
   return (
     <>
-      {/* Fixed top header - style inspired by Logivolt.fr */}
+      {/* Fixed top header with top bar and social icons */}
       <header className="fixed w-full z-50 top-0">
-        {/* Minimal top navigation bar */}
+        {/* Top bar with contact info and social icons */}
+        <div className="w-full bg-gradient-to-r from-[#003566] to-[#1a4d85] text-white py-2 hidden md:block">
+          <div className="container mx-auto px-4">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center">
+                <a href="tel:0123456789" className="flex items-center text-white hover:text-[#8dc63f] transition-colors text-sm mr-6">
+                  <i className="fas fa-phone-alt mr-2"></i>
+                  <span>01 23 45 67 89</span>
+                </a>
+                <a href="mailto:contact@borneflix.fr" className="flex items-center text-white hover:text-[#8dc63f] transition-colors text-sm">
+                  <i className="fas fa-envelope mr-2"></i>
+                  <span>contact@borneflix.fr</span>
+                </a>
+              </div>
+              <div className="flex items-center space-x-4">
+                <a href="#" className="text-white hover:text-[#8dc63f] transition-colors">
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" className="text-white hover:text-[#8dc63f] transition-colors">
+                  <i className="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" className="text-white hover:text-[#8dc63f] transition-colors">
+                  <i className="fab fa-twitter"></i>
+                </a>
+                <a href="#" className="text-white hover:text-[#8dc63f] transition-colors">
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Main navigation bar - more attractive with better fonts */}
         <div className="w-full bg-white shadow-sm">
           <div className="container mx-auto px-4 py-4">
             <div className="flex justify-between items-center">
-              {/* Logo */}
+              {/* Logo with new font style */}
               <div className="flex-shrink-0">
                 <a href="#" className="flex items-center">
                   <div className="h-8">
-                    <span className="text-[#003566] font-bold text-2xl tracking-tight">BORNE<span className="text-[#8dc63f]">FLIX</span></span>
+                    <span className="text-[#003566] font-bold text-2xl tracking-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>BORNE<span className="text-[#8dc63f]">FLIX</span></span>
                   </div>
                 </a>
               </div>
 
-              {/* Desktop Nav - simplified and more attractive */}
+              {/* Desktop Nav - clean and attractive */}
               <nav className="hidden md:flex items-center space-x-8">
                 <a href="#solutions" className="text-sm font-medium text-[#003566] hover:text-[#8dc63f] transition-colors border-b-2 border-transparent hover:border-[#8dc63f] pb-1">
                   Solutions
@@ -95,7 +127,7 @@ const Header = () => {
                 </a>
               </nav>
 
-              {/* Mobile menu button - minimal design */}
+              {/* Mobile menu button with improved style */}
               <div className="md:hidden">
                 <button
                   onClick={toggleMobileMenu}
@@ -173,7 +205,7 @@ const Header = () => {
       </header>
 
       {/* Empty space to offset the fixed header */}
-      <div className="h-[120px]"></div>
+      <div className="h-[140px]"></div>
       
       {/* Overlay when mobile menu is open */}
       {isMobileMenuOpen && (
