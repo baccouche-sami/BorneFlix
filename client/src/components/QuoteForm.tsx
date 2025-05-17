@@ -784,10 +784,10 @@ const QuoteForm = () => {
                     {currentStep < totalSteps ? (
                       <Button
                         type="button"
-                        className="bg-primary hover:bg-blue-600 text-white font-medium px-8 py-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
                         onClick={nextStep}
+                        className="bg-[#003566] text-white hover:bg-[#1a4d85] py-6 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 font-medium text-base"
                       >
-                        Continuer <i className="fas fa-arrow-right ml-2"></i>
+                        Continuer <i className="fas fa-arrow-right ml-3"></i>
                       </Button>
                     ) : (
                       <Button
