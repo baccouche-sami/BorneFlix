@@ -71,11 +71,11 @@ const HeroSection = () => {
             <div className="lg:col-span-6 relative flex justify-center">
               <div className="relative">
                 {/* Main image */}
-                <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white p-6 bg-white">
+                <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
                   <img 
-                    src={evchargingImage} 
-                    alt="Borne de recharge pour véhicule électrique en copropriété" 
-                    className="w-full h-auto object-contain"
+                    src="/images/reelles/station-solaire.jpg" 
+                    alt="Borne de recharge avec panneaux solaires pour véhicule électrique en copropriété" 
+                    className="w-full h-auto object-cover"
                     style={{ maxHeight: '450px' }}
                   />
                 </div>

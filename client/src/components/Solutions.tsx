@@ -28,11 +28,11 @@ const Solutions = () => {
         {/* Solution tabs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-primary hover:shadow-xl transition-shadow duration-300">
-            <div className="h-48 overflow-hidden bg-primary/5 flex items-center justify-center p-4">
+            <div className="h-48 overflow-hidden bg-primary/5">
               <img 
-                src={evchargingImage} 
+                src="/images/reelles/borne-recharge.jpg" 
                 alt="Infrastructure de recharge collective en copropriété"
-                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="p-6">
