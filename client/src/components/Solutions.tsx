@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
-import { motion } from "framer-motion";
 // Utilisation des SVG existants dans le projet
 import evchargingImage from "@/assets/evcharging.svg";
 import featuresGridImage from "@/assets/features-grid.svg";
@@ -29,7 +27,7 @@ const Solutions = () => {
         
         {/* Solution tabs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-primary hover:shadow-xl transition-shadow duration-300">
+          <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-primary hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px]">
             <div className="h-56 overflow-hidden bg-primary/5 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-[#003566]/20 to-transparent z-10"></div>
               <img 
@@ -66,7 +64,7 @@ const Solutions = () => {
             </div>
           </Card>
           
-          <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-secondary hover:shadow-xl transition-shadow duration-300">
+          <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-secondary hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px]">
             <div className="h-56 overflow-hidden bg-secondary/5 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-[#8dc63f]/20 to-transparent z-10"></div>
               <img 
