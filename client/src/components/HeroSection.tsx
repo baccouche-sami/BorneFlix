@@ -30,11 +30,11 @@ const HeroSection = () => {
               </h1>
               
               <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-700">
-                Équipez sereinement le parking de votre immeuble en bornes de recharge
+                Équipez sereinement le parking de votre immeuble en <span className="highlight-text">bornes de recharge</span>
               </h2>
               
               <p className="text-lg mb-8 text-gray-600">
-                BorneFlix vous accompagne dans l'installation de bornes de recharge pour véhicules électriques adaptées aux besoins de votre copropriété, avec des solutions de financement dédiées.
+                <span className="seo-highlight">BorneFlix</span> vous accompagne dans l'installation de <span className="seo-highlight">bornes de recharge pour véhicules électriques</span> adaptées aux besoins spécifiques de votre copropriété, avec des solutions de financement dédiées et un accompagnement complet.
               </p>
               
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">

@@ -15,11 +15,13 @@ const Solutions = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block bg-[#003566]/10 text-[#003566] px-4 py-1 rounded-full text-sm font-medium mb-4">
-            NOS SOLUTIONS
+            NOS SOLUTIONS DE RECHARGE
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003566]">La recharge en habitat collectif</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003566]">
+            Installation de <span className="highlight-text">bornes de recharge</span> en copropriété
+          </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
-            BorneFlix propose différentes options pour s'adapter parfaitement aux besoins spécifiques de votre copropriété et de ses résidents.
+            <span className="seo-highlight">BorneFlix</span> propose différentes solutions d'installation de <span className="seo-highlight">bornes de recharge</span> pour s'adapter parfaitement aux besoins spécifiques de votre copropriété et maximiser les aides financières ADVENIR jusqu'à 50%.
           </p>
         </div>
         
