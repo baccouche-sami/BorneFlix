@@ -31,7 +31,7 @@ const Solutions = () => {
             <div className="h-56 overflow-hidden bg-primary/5 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-[#003566]/20 to-transparent z-10"></div>
               <img 
-                src={import.meta.env.DEV ? '/attached_assets/pexels-kindelmedia-9800030.jpg' : '/images/reelles/pexels-kindelmedia-9800030.jpg'} 
+                src="/images/gallery/pexels-kindelmedia-9800030.jpg" 
                 alt="Infrastructure de recharge collective en copropriété"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
               />
@@ -68,7 +68,7 @@ const Solutions = () => {
             <div className="h-56 overflow-hidden bg-secondary/5 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-[#8dc63f]/20 to-transparent z-10"></div>
               <img 
-                src={import.meta.env.DEV ? '/attached_assets/images-4.png' : '/images/reelles/images-4.png'} 
+                src="/images/gallery/images-4.png" 
                 alt="Solution individuelle de recharge en copropriété"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
               />
@@ -105,7 +105,7 @@ const Solutions = () => {
             <div className="h-56 overflow-hidden bg-accent/5 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent z-10"></div>
               <img 
-                src={import.meta.env.DEV ? '/attached_assets/images-1.png' : '/images/reelles/images-1.png'} 
+                src="/images/gallery/images-1.png" 
                 alt="Pré-équipement pour bornes de recharge"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
               />
@@ -210,7 +210,7 @@ const Solutions = () => {
               <div className="relative flex items-center justify-center h-full overflow-hidden">
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 via-primary/20 to-secondary/30 rounded-lg blur-xl animate-pulse"></div>
                 <img 
-                  src={import.meta.env.DEV ? '/attached_assets/images-13.png' : '/images/reelles/images-13.png'} 
+                  src="/images/gallery/images-13.png" 
                   alt="Infrastructure de recharge collective en copropriété" 
                   className="relative max-w-full h-auto object-contain rounded-lg transform hover:scale-102 transition-transform duration-700"
                   style={{ maxHeight: '400px' }}
