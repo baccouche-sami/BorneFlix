@@ -320,7 +320,7 @@ const Solutions = () => {
             </div>
             <div className="hidden lg:block lg:pr-8">
               <img 
-                src={evchargingImage}
+                src="/images/reelles/borne-recharge.jpg"
                 alt="Borne de recharge véhicule électrique" 
                 className="rounded-xl shadow-lg"
               />
