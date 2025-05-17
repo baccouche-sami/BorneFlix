@@ -1,11 +1,12 @@
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "@/components/CreativeHeroSection";
 import Introduction from "@/components/Introduction";
 import Solutions from "@/components/Solutions";
 import Advantages from "@/components/Advantages";
 import Process from "@/components/Process";
+import ParallaxSection from "@/components/ParallaxSection";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
-import FAQ from "@/components/FAQ";
+import FAQ from "@/components/ModernFAQ";
 import QuoteForm from "@/components/QuoteForm";
 import Gallery from "@/components/ImageGallery";
 import Contact from "@/components/Contact";
@@ -45,6 +46,7 @@ const Home = () => {
       <ReadyToPlug />
       <Advantages />
       <Process />
+      <ParallaxSection />
       <Testimonials />
       <CTA />
       <FAQ />
