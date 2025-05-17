@@ -109,7 +109,9 @@ const QuoteForm = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.rgpd) {
@@ -121,36 +123,69 @@ const QuoteForm = () => {
       return;
     }
 
-    // Here we would send the data to the server
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
     
-    // Show success message
-    toast({
-      title: "Demande envoyée",
-      description: "Votre demande de devis a été envoyée avec succès. Nous vous contacterons dans les plus brefs délais.",
-    });
-    
-    // Reset form and go back to step 1
-    setFormData({
-      nom: "",
-      prenom: "",
-      email: "",
-      telephone: "",
-      typeLogement: "",
-      adresse: "",
-      codePostal: "",
-      ville: "",
-      nombrePlacesParking: "",
-      nombreResidents: "",
-      typeInstallation: "infrastructure-collective",
-      nombreBornes: "",
-      puissanceRequise: "",
-      statutDemandeur: "",
-      dateProjet: "",
-      commentaires: "",
-      rgpd: false
-    });
-    setCurrentStep(1);
+    try {
+      // Envoi des données au serveur
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        // Afficher le message de succès
+        toast({
+          title: "Demande envoyée",
+          description: data.message || "Votre demande de devis a été envoyée avec succès. Nous vous contacterons dans les plus brefs délais.",
+        });
+        
+        // Réinitialiser le formulaire et revenir à l'étape 1
+        setFormData({
+          nom: "",
+          prenom: "",
+          email: "",
+          telephone: "",
+          typeLogement: "",
+          adresse: "",
+          codePostal: "",
+          ville: "",
+          nombrePlacesParking: "",
+          nombreResidents: "",
+          typeInstallation: "infrastructure-collective",
+          nombreBornes: "",
+          puissanceRequise: "",
+          statutDemandeur: "",
+          dateProjet: "",
+          commentaires: "",
+          rgpd: false
+        });
+        setCurrentStep(1);
+        
+        // Faire défiler vers le haut
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // Afficher le message d'erreur
+        toast({
+          title: "Erreur",
+          description: data.message || "Une erreur est survenue lors de l'envoi du formulaire. Veuillez réessayer ultérieurement.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'envoi du formulaire:", error);
+      toast({
+        title: "Erreur de connexion",
+        description: "Impossible de contacter le serveur. Veuillez vérifier votre connexion et réessayer.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Function to get step icons
@@ -757,8 +792,18 @@ const QuoteForm = () => {
                       <Button
                         type="submit"
                         className="bg-secondary hover:bg-green-600 text-white font-medium px-8 py-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-secondary/30"
+                        disabled={isSubmitting}
                       >
-                        Demander mon devis gratuit <i className="fas fa-check-circle ml-2"></i>
+                        {isSubmitting ? (
+                          <>
+                            <i className="fas fa-circle-notch fa-spin mr-2"></i>
+                            Envoi en cours...
+                          </>
+                        ) : (
+                          <>
+                            Demander mon devis gratuit <i className="fas fa-check-circle ml-2"></i>
+                          </>
+                        )}
                       </Button>
                     )}
                   </div>
