@@ -66,7 +66,10 @@ const Header = () => {
           ? 'bg-white shadow-md py-3' 
           : 'bg-transparent py-5'
       }`}
-      style={{ backgroundColor: isScrolled || isMobileMenuOpen ? 'white' : '#003566' }}
+      style={{ 
+        backgroundColor: isScrolled || isMobileMenuOpen ? 'white' : '#003566',
+        boxShadow: isScrolled || isMobileMenuOpen ? '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' : 'none'
+      }}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
@@ -95,53 +98,41 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <a 
               href="#solutions" 
-              className={`font-medium hover:text-secondary transition-colors ${
-                isScrolled ? 'text-gray-700' : 'text-white'
-              }`}
+              className="font-medium text-white hover:text-secondary transition-colors"
             >
               Solutions
             </a>
             <a 
               href="#avantages" 
-              className={`font-medium hover:text-secondary transition-colors ${
-                isScrolled ? 'text-gray-700' : 'text-white'
-              }`}
+              className="font-medium text-white hover:text-secondary transition-colors"
             >
               Avantages
             </a>
             <a 
               href="#processus" 
-              className={`font-medium hover:text-secondary transition-colors ${
-                isScrolled ? 'text-gray-700' : 'text-white'
-              }`}
+              className="font-medium text-white hover:text-secondary transition-colors"
             >
               Processus
             </a>
             <a 
               href="#temoignages" 
-              className={`font-medium hover:text-secondary transition-colors ${
-                isScrolled ? 'text-gray-700' : 'text-white'
-              }`}
+              className="font-medium text-white hover:text-secondary transition-colors"
             >
               Témoignages
             </a>
             <a 
               href="#contact" 
-              className={`font-medium hover:text-secondary transition-colors ${
-                isScrolled ? 'text-gray-700' : 'text-white'
-              }`}
+              className="font-medium text-white hover:text-secondary transition-colors"
             >
               Contact
             </a>
             
-            <div className="border-l border-gray-300 dark:border-gray-700 h-6 mx-1 lg:mx-2"></div>
+            <div className="border-l border-white h-6 mx-1 lg:mx-2"></div>
             
             <div className="flex items-center">
               <a 
                 href="tel:0123456789" 
-                className={`flex items-center hover:text-secondary transition-colors ${
-                  isScrolled ? 'text-gray-700' : 'text-white'
-                }`}
+                className="flex items-center text-white hover:text-secondary transition-colors"
               >
                 <i className="fas fa-phone-alt mr-2 text-secondary"></i>
                 <span className="text-sm font-medium">01 23 45 67 89</span>
