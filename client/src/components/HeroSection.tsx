@@ -1,4 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+import ChargingStation3D from "./ChargingStation3D";
+import { motion } from "framer-motion";
 // Utilisation des images SVG existantes dans le projet
 import evchargingImage from "@/assets/evcharging.svg";
 import heroImage from "@/assets/hero.svg";
@@ -60,11 +63,21 @@ const HeroSection = () => {
               </div>
             </div>
             
-            {/* Right image column */}
+            {/* Right column with 3D model and image */}
             <div className="lg:col-span-6 relative flex justify-center">
-              <div className="relative">
-                {/* Main image */}
-                <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
+              <motion.div 
+                className="relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                {/* 3D Model - visible on larger screens */}
+                <div className="hidden lg:block rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
+                  <ChargingStation3D />
+                </div>
+                
+                {/* Main image - visible on mobile/tablet */}
+                <div className="lg:hidden rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
                   <img 
                     src={import.meta.env.DEV ? '/src/assets/station-solaire.jpg' : '/images/reelles/station-solaire.jpg'} 
                     alt="Borne de recharge avec panneaux solaires pour véhicule électrique en copropriété" 
@@ -73,26 +86,54 @@ const HeroSection = () => {
                   />
                 </div>
                 
-                {/* Floating elements */}
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-xl overflow-hidden border-4 border-white shadow-lg bg-primary/10 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center">
+                {/* Floating elements with animations */}
+                <motion.div 
+                  className="absolute -bottom-6 -left-6 w-32 h-32 rounded-xl overflow-hidden border-4 border-white shadow-lg bg-primary/10 flex items-center justify-center"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                >
+                  <motion.div 
+                    className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center"
+                    animate={{ rotate: [0, 10, 0, -10, 0] }}
+                    transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                  >
                     <i className="fas fa-leaf text-secondary text-2xl"></i>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
                 
-                <div className="absolute -top-6 -right-6 w-32 h-32 rounded-xl overflow-hidden border-4 border-white shadow-lg bg-accent/10 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center">
+                <motion.div 
+                  className="absolute -top-6 -right-6 w-32 h-32 rounded-xl overflow-hidden border-4 border-white shadow-lg bg-accent/10 flex items-center justify-center"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                >
+                  <motion.div 
+                    className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center"
+                    animate={{ 
+                      boxShadow: ["0 0 0 0 rgba(59, 130, 246, 0)", "0 0 0 10px rgba(59, 130, 246, 0.3)", "0 0 0 0 rgba(59, 130, 246, 0)"] 
+                    }}
+                    transition={{ repeat: Infinity, duration: 3 }}
+                  >
                     <i className="fas fa-plug text-accent text-2xl"></i>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
                 
-                {/* Certification badge */}
-                <div className="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4">
+                {/* Certification badge with animation */}
+                <motion.div 
+                  className="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4"
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 1 }}
+                  whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
+                >
                   <div className="bg-accent text-white font-bold text-base p-4 rounded-lg shadow-lg">
                     <i className="fas fa-check-circle mr-2"></i> ADVENIR
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </div>
