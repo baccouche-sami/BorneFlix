@@ -64,14 +64,15 @@ const Header = () => {
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled || isMobileMenuOpen
           ? 'bg-white shadow-md py-3' 
-          : 'bg-[#003566] md:bg-transparent py-5'
+          : 'bg-transparent py-5'
       }`}
+      style={{ backgroundColor: isScrolled || isMobileMenuOpen ? 'white' : '#003566' }}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="#" className="flex items-center">
-              <div className="w-auto h-10">
+              <div className="w-auto h-8 md:h-10 bg-white rounded-full p-1">
                 <img src={logo} alt="BorneFlix Logo" className="h-full w-auto" />
               </div>
             </a>

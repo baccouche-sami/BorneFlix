@@ -10,7 +10,7 @@ const HeroSection = () => {
       {/* Blue notification banner at top */}
       <div className="w-full bg-blue-50 text-blue-800 py-2 px-4 text-center">
         <div className="container mx-auto">
-          <p className="text-sm font-medium">
+          <p className="text-xs sm:text-sm font-medium">
             <span className="mr-1">✨</span> Profitez des aides financières ADVENIR jusqu'à 50% pour l'installation de bornes en copropriété <span className="ml-1">✨</span>
           </p>
         </div>
