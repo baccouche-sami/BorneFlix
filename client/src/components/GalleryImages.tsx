@@ -3,37 +3,37 @@ import React from 'react';
 const GalleryImages = () => {
   const images = [
     {
-      src: '/images/reelles/pexels-kindelmedia-9800030.jpg',
+      src: '/images/reelles/station-solaire.jpg',
       alt: 'Station de recharge pour véhicule électrique',
       title: 'Résidence Les Oliviers',
       description: 'Station de recharge rapide pour copropriété'
     },
     {
-      src: '/images/reelles/images-1.png',
+      src: '/images/reelles/signature-contrat.jpg',
       alt: 'Borne de recharge murale',
       title: 'Villa des Pins', 
       description: 'Installation murale compacte'
     },
     {
-      src: '/images/reelles/images-4.png',
+      src: '/images/reelles/borne-recharge.jpg',
       alt: 'Borne de recharge extérieure',
       title: 'Parc Saint-Michel',
       description: 'Solution extérieure avec protection intempéries'
     },
     {
-      src: '/images/reelles/images-13.png',
+      src: '/images/reelles/installation.jpg',
       alt: 'Installation sur parking souterrain',
       title: 'Résidence Le Grand Chêne',
       description: 'Système pour parking sous-terrain'
     },
     {
-      src: '/images/reelles/image-newsletter-ok.jpeg',
+      src: import.meta.env.DEV ? '/client/src/assets/station-solaire.jpg' : '/images/reelles/station-solaire.jpg',
       alt: 'Bornes de recharge en réseau',
       title: 'Les Jardins de Mérignac',
       description: 'Infrastructure collective intelligente'
     },
     {
-      src: '/images/reelles/screenshot-1747485121313.png',
+      src: import.meta.env.DEV ? '/client/src/assets/borne-recharge.jpg' : '/images/reelles/borne-recharge.jpg',
       alt: 'Chargeur pour copropriété',
       title: 'Les Terrasses du Parc',
       description: 'Solution complète avec gestion multi-utilisateurs'
