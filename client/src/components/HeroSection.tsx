@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import ChargingStation3D from "./ChargingStation3D";
+import ChargingStationAnimation from "./ChargingStationAnimation";
 import { motion } from "framer-motion";
 // Utilisation des images SVG existantes dans le projet
 import evchargingImage from "@/assets/evcharging.svg";
@@ -71,9 +71,9 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                {/* 3D Model - visible on larger screens */}
+                {/* Animation interactive - visible on larger screens */}
                 <div className="hidden lg:block rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
-                  <ChargingStation3D />
+                  <ChargingStationAnimation />
                 </div>
                 
                 {/* Main image - visible on mobile/tablet */}
