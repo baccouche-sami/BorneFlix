@@ -64,11 +64,11 @@ const Solutions = () => {
           </Card>
           
           <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-secondary hover:shadow-xl transition-shadow duration-300">
-            <div className="h-48 overflow-hidden bg-secondary/5 flex items-center justify-center p-4">
+            <div className="h-48 overflow-hidden bg-secondary/5">
               <img 
-                src={readyToPlugImage} 
+                src="/images/reelles/signature-contrat.jpg" 
                 alt="Solution individuelle de recharge en copropriété"
-                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="p-6">
@@ -100,11 +100,11 @@ const Solutions = () => {
           </Card>
           
           <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-accent hover:shadow-xl transition-shadow duration-300">
-            <div className="h-48 overflow-hidden bg-accent/5 flex items-center justify-center p-4">
+            <div className="h-48 overflow-hidden bg-accent/5">
               <img 
-                src={featuresGridImage} 
+                src="/images/reelles/installation.jpg" 
                 alt="Pré-équipement pour bornes de recharge"
-                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="p-6">
@@ -206,7 +206,7 @@ const Solutions = () => {
             <div className="lg:col-span-7 order-1 lg:order-2 relative bg-primary/5 p-6">
               <div className="flex items-center justify-center h-full">
                 <img 
-                  src={evchargingImage} 
+                  src="/images/reelles/station-solaire.jpg" 
                   alt="Infrastructure de recharge collective en copropriété" 
                   className="max-w-full h-auto object-contain"
                   style={{ maxHeight: '400px' }}
