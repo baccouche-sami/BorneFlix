@@ -89,7 +89,7 @@ const HeroSection = () => {
                 />
                 
                 {/* Overlay avec des éléments animés */}
-                <div className="absolute inset-0 z-20 opacity-60 mix-blend-screen">
+                <div className="absolute inset-0 z-20 opacity-60 mix-blend-screen overflow-hidden">
                   <motion.div 
                     className="absolute top-1/4 right-1/4 w-16 h-16 rounded-full bg-blue-400"
                     animate={{ 
