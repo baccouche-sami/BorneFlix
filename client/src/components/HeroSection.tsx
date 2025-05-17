@@ -23,7 +23,7 @@ const HeroSection = () => {
               </h1>
               
               <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-700">
-                Équipez sereinement le parking de votre immeuble en <span className="highlight-text">bornes de recharge</span>
+                Équipez sereinement le parking de votre immeuble en <span className="text-[#8dc63f]">bornes de recharge</span>
               </h2>
               
               <p className="text-lg mb-8 text-gray-600">

@@ -229,26 +229,26 @@ const QuoteForm = () => {
               <div
                 className={`w-16 h-16 rounded-full flex items-center justify-center text-xl font-medium shadow-md transition-all duration-300 ${
                   step === currentStep
-                    ? "bg-primary text-white scale-110 shadow-primary/30"
+                    ? "bg-[#003566] text-white scale-110 shadow-lg"
                     : step < currentStep
-                    ? "bg-secondary text-white"
+                    ? "bg-[#8dc63f] text-white"
                     : "bg-gray-100 text-gray-400"
                 }`}
               >
                 {getStepIcon(step)}
                 
                 {/* Step number badge */}
-                <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white shadow flex items-center justify-center text-xs font-bold border border-gray-100">
+                <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white shadow-md flex items-center justify-center text-xs font-bold border border-gray-100">
                   {step}
                 </div>
               </div>
               
               {/* Progress connector */}
               {step < totalSteps && (
-                <div className="absolute top-1/2 left-full w-8 h-0.5 -translate-y-1/2">
+                <div className="absolute top-1/2 left-full w-10 h-1 -translate-y-1/2">
                   <div
-                    className={`h-full ${
-                      step < currentStep ? "bg-secondary" : "bg-gray-200"
+                    className={`h-full rounded-full ${
+                      step < currentStep ? "bg-[#8dc63f]" : "bg-gray-200"
                     }`}
                   />
                 </div>
@@ -257,8 +257,8 @@ const QuoteForm = () => {
             
             {/* Step label */}
             <span 
-              className={`text-xs font-medium mt-2 ${
-                step === currentStep ? "text-primary" : "text-gray-500"
+              className={`text-sm font-medium mt-3 ${
+                step === currentStep ? "text-[#003566]" : "text-gray-500"
               }`}
             >
               {getStepDescription(step)}
@@ -323,12 +323,12 @@ const QuoteForm = () => {
         
         <div className="max-w-4xl mx-auto">
           <Card className="bg-white rounded-xl shadow-xl overflow-hidden border-0">
-            <div className="bg-primary text-white p-6 text-center">
-              <p className="text-sm uppercase tracking-wider font-medium">Étape {currentStep} sur {totalSteps}</p>
-              <h3 className="text-2xl font-bold mt-1">{renderStepTitle()}</h3>
+            <div className="bg-gradient-to-r from-[#003566] to-[#1a4d85] text-white p-8 text-center">
+              <p className="text-sm uppercase tracking-wider font-medium mb-2">Étape {currentStep} sur {totalSteps}</p>
+              <h3 className="text-2xl font-bold">{renderStepTitle()}</h3>
             </div>
             
-            <CardContent className="p-8">
+            <CardContent className="p-8 md:p-10">
               {renderStepIndicator()}
               
               <form onSubmit={handleSubmit} className="mt-8">
