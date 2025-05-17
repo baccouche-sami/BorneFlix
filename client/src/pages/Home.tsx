@@ -7,7 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import FAQ from "@/components/FAQ";
 import QuoteForm from "@/components/QuoteForm";
-import Gallery from "@/components/ImageGallery";
+import Gallery from "@/components/GalleryImages";
 import Contact from "@/components/Contact";
 import ReadyToPlug from "@/components/ReadyToPlug";
 import { useEffect } from "react";
