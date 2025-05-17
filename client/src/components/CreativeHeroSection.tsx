@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { useEffect, useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-const HeroSection = () => {
+const CreativeHeroSection = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
   
@@ -68,7 +68,7 @@ const HeroSection = () => {
             </motion.div>
           </div>
           
-          {/* Right column with 3D animation et image */}
+          {/* Right column with image and decorative elements */}
           <div className="lg:col-span-5 xl:col-span-6 relative">
             <motion.div 
               className="relative"
@@ -93,7 +93,7 @@ const HeroSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-purple-500/10 to-green-500/20"></div>
                 </div>
                 
-                {/* Fil décoratif */}
+                {/* Fil décoratif animé */}
                 <motion.div 
                   className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-1 h-32 bg-[#00aaff]"
                   animate={{ 
@@ -108,6 +108,27 @@ const HeroSection = () => {
                 ></motion.div>
               </div>
               
+              {/* Icônes flottantes animées */}
+              <motion.div
+                className="absolute -left-4 top-1/4 w-16 h-16 rounded-full bg-[#8dc63f] flex items-center justify-center text-white shadow-lg"
+                initial={{ x: -20, opacity: 0 }}
+                animate={isInView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
+              >
+                <i className="fas fa-leaf text-2xl"></i>
+              </motion.div>
+              
+              <motion.div
+                className="absolute top-2/3 -right-2 w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center text-white shadow-lg"
+                initial={{ x: 20, opacity: 0 }}
+                animate={isInView ? { x: 0, opacity: 1 } : { x: 20, opacity: 0 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
+              >
+                <i className="fas fa-bolt text-xl"></i>
+              </motion.div>
+              
               {/* Badge avec animation */}
               <motion.div 
                 className="absolute -right-4 top-10 transform rotate-12 z-30"
@@ -119,6 +140,23 @@ const HeroSection = () => {
                 <div className="bg-[#8dc63f] text-white font-bold text-sm md:text-base p-3 md:p-4 rounded-lg shadow-lg">
                   <i className="fas fa-check-circle mr-2"></i> Jusqu'à 50% d'aides
                 </div>
+              </motion.div>
+              
+              {/* Petite voiture électrique */}
+              <motion.div
+                className="absolute bottom-0 right-1/4 transform"
+                initial={{ x: -50, opacity: 0 }}
+                animate={isInView ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
+                transition={{ duration: 0.7, delay: 1.2 }}
+              >
+                <div className="bg-white p-2 rounded-full shadow-lg">
+                  <i className="fas fa-car text-[#003566] text-xl"></i>
+                </div>
+                <motion.div
+                  className="absolute top-0 right-0 w-3 h-3 bg-blue-500 rounded-full"
+                  animate={{ scale: [1, 1.5, 1], opacity: [0.7, 1, 0.7] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                ></motion.div>
               </motion.div>
             </motion.div>
           </div>
@@ -168,4 +206,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default CreativeHeroSection;
