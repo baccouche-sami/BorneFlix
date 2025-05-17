@@ -63,49 +63,43 @@ const Header = () => {
     <>
       {/* Fixed top header - style inspired by Logivolt.fr */}
       <header className="fixed w-full z-50 top-0">
-        {/* Top blue announcement bar */}
-        <div className="w-full bg-[#e5e9f0]">
-          <div className="container mx-auto px-4 py-3">
+        {/* Minimal top navigation bar */}
+        <div className="w-full bg-white shadow-sm">
+          <div className="container mx-auto px-4 py-4">
             <div className="flex justify-between items-center">
               {/* Logo */}
               <div className="flex-shrink-0">
                 <a href="#" className="flex items-center">
                   <div className="h-8">
-                    <span className="text-[#003566] font-bold text-2xl">BORNE<span className="text-[#8dc63f]">FLIX</span></span>
+                    <span className="text-[#003566] font-bold text-2xl tracking-tight">BORNE<span className="text-[#8dc63f]">FLIX</span></span>
                   </div>
                 </a>
               </div>
 
-              {/* Desktop Nav */}
-              <nav className="hidden md:flex items-center space-x-6">
-                <a href="#solutions" className="text-sm font-medium text-[#003566] hover:text-[#8dc63f] transition-colors">
-                  NOS SOLUTIONS
+              {/* Desktop Nav - simplified and more attractive */}
+              <nav className="hidden md:flex items-center space-x-8">
+                <a href="#solutions" className="text-sm font-medium text-[#003566] hover:text-[#8dc63f] transition-colors border-b-2 border-transparent hover:border-[#8dc63f] pb-1">
+                  Solutions
                 </a>
-                <a href="#operateurs" className="text-sm font-medium text-[#003566] hover:text-[#8dc63f] transition-colors">
-                  NOS OPÉRATEURS
+                <a href="#avantages" className="text-sm font-medium text-[#003566] hover:text-[#8dc63f] transition-colors border-b-2 border-transparent hover:border-[#8dc63f] pb-1">
+                  Avantages
                 </a>
-                <a href="#blog" className="text-sm font-medium text-[#003566] hover:text-[#8dc63f] transition-colors">
-                  BLOG
+                <a href="#processus" className="text-sm font-medium text-[#003566] hover:text-[#8dc63f] transition-colors border-b-2 border-transparent hover:border-[#8dc63f] pb-1">
+                  Processus
                 </a>
-                <a href="#presse" className="text-sm font-medium text-[#003566] hover:text-[#8dc63f] transition-colors">
-                  PRESSE
+                <a href="#contact" className="text-sm font-medium text-[#003566] hover:text-[#8dc63f] transition-colors border-b-2 border-transparent hover:border-[#8dc63f] pb-1">
+                  Contact
                 </a>
-                <a href="#apropos" className="text-sm font-medium text-[#003566] hover:text-[#8dc63f] transition-colors">
-                  À PROPOS
-                </a>
-                <a href="#vous-etes" className="text-sm font-medium text-[#003566] hover:text-[#8dc63f] transition-colors">
-                  VOUS ÊTES
-                </a>
-                <a href="#devis" className="text-sm font-medium bg-[#8dc63f] hover:bg-[#7db52f] text-white px-4 py-1 rounded transition-colors">
-                  CONTACT
+                <a href="#devis" className="text-sm font-medium bg-[#8dc63f] hover:bg-[#7db52f] text-white px-5 py-2 rounded-full transition-all duration-300 shadow-sm hover:shadow-md">
+                  Demander un devis
                 </a>
               </nav>
 
-              {/* Mobile menu button */}
+              {/* Mobile menu button - minimal design */}
               <div className="md:hidden">
                 <button
                   onClick={toggleMobileMenu}
-                  className="focus:outline-none p-2"
+                  className="focus:outline-none p-2 transition-colors duration-300"
                   aria-label="Menu principal"
                   aria-expanded={isMobileMenuOpen}
                 >
@@ -116,73 +110,63 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Alert banner */}
-        <div className="w-full bg-[#c21f70] text-white py-3">
+        {/* Simplified banner that looks more elegant */}
+        <div className="w-full bg-gradient-to-r from-[#003566] to-[#0056a8] text-white py-3">
           <div className="container mx-auto px-4">
             <p className="text-sm md:text-base font-medium text-center">
-              Installer des bornes de recharge pour véhicules électriques en copropriété soulève de nombreuses questions. Nous y répondons dans un webinaire le 22 mai.
+              Profitez des aides financières ADVENIR jusqu'à 50% pour l'installation de bornes en copropriété
             </p>
           </div>
         </div>
 
-        {/* Mobile Navigation Dropdown */}
+        {/* Mobile Navigation Dropdown - Minimalist and attractive */}
         <div 
-          className={`md:hidden fixed top-[120px] left-0 right-0 bottom-0 bg-white shadow-lg px-6 pt-6 pb-32 overflow-y-auto transition-transform duration-300 z-40 ${
+          className={`md:hidden fixed top-[84px] left-0 right-0 bottom-0 bg-white shadow-lg px-6 pt-6 pb-32 overflow-y-auto transition-transform duration-300 z-40 ${
             isMobileMenuOpen ? 'translate-y-0' : 'translate-y-full pointer-events-none'
           }`}
         >
-          <nav className="flex flex-col space-y-5">
+          <nav className="flex flex-col space-y-4">
             <a 
               href="#solutions" 
-              className="flex items-center font-medium text-[#003566] hover:text-[#8dc63f] transition-colors py-2 border-b border-gray-100 pb-3"
+              className="flex items-center font-medium text-[#003566] hover:text-[#8dc63f] transition-colors py-3 border-b border-gray-100"
               onClick={handleMobileLinkClick}
             >
-              <span>NOS SOLUTIONS</span>
+              <i className="fas fa-plug text-[#8dc63f] mr-3"></i>
+              <span>Solutions</span>
             </a>
             <a 
-              href="#operateurs" 
-              className="flex items-center font-medium text-[#003566] hover:text-[#8dc63f] transition-colors py-2 border-b border-gray-100 pb-3"
+              href="#avantages" 
+              className="flex items-center font-medium text-[#003566] hover:text-[#8dc63f] transition-colors py-3 border-b border-gray-100"
               onClick={handleMobileLinkClick}
             >
-              <span>NOS OPÉRATEURS</span>
+              <i className="fas fa-star text-[#8dc63f] mr-3"></i>
+              <span>Avantages</span>
             </a>
             <a 
-              href="#blog" 
-              className="flex items-center font-medium text-[#003566] hover:text-[#8dc63f] transition-colors py-2 border-b border-gray-100 pb-3"
+              href="#processus" 
+              className="flex items-center font-medium text-[#003566] hover:text-[#8dc63f] transition-colors py-3 border-b border-gray-100"
               onClick={handleMobileLinkClick}
             >
-              <span>BLOG</span>
+              <i className="fas fa-tasks text-[#8dc63f] mr-3"></i>
+              <span>Processus</span>
             </a>
             <a 
-              href="#presse" 
-              className="flex items-center font-medium text-[#003566] hover:text-[#8dc63f] transition-colors py-2 border-b border-gray-100 pb-3"
+              href="#contact" 
+              className="flex items-center font-medium text-[#003566] hover:text-[#8dc63f] transition-colors py-3 border-b border-gray-100"
               onClick={handleMobileLinkClick}
             >
-              <span>PRESSE</span>
-            </a>
-            <a 
-              href="#apropos" 
-              className="flex items-center font-medium text-[#003566] hover:text-[#8dc63f] transition-colors py-2 border-b border-gray-100 pb-3"
-              onClick={handleMobileLinkClick}
-            >
-              <span>À PROPOS</span>
-            </a>
-            <a 
-              href="#vous-etes" 
-              className="flex items-center font-medium text-[#003566] hover:text-[#8dc63f] transition-colors py-2 border-b border-gray-100 pb-3"
-              onClick={handleMobileLinkClick}
-            >
-              <span>VOUS ÊTES</span>
+              <i className="fas fa-envelope text-[#8dc63f] mr-3"></i>
+              <span>Contact</span>
             </a>
           </nav>
           
-          <div className="mt-6 pt-4">
+          <div className="mt-8">
             <a 
               href="#devis" 
-              className="bg-[#8dc63f] hover:bg-[#7db52f] text-white font-medium py-3 px-6 rounded text-center transition-colors w-full block"
+              className="bg-[#8dc63f] hover:bg-[#7db52f] text-white font-medium py-3 px-6 rounded-full text-center transition-all duration-300 w-full block shadow-sm hover:shadow-md"
               onClick={handleMobileLinkClick}
             >
-              CONTACT
+              Demander un devis
             </a>
           </div>
         </div>
