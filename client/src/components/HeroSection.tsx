@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/hero.svg";
 
 const HeroSection = () => {
   return (
@@ -38,7 +39,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="bg-white w-[450px] h-[450px] rounded-full overflow-hidden shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1593941707882-a5bfcf2dd8b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  src={heroImage} 
                   alt="Borne de recharge pour véhicule électrique" 
                   className="w-full h-full object-cover"
                 />

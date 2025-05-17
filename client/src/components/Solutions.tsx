@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import evchargingImage from "@/assets/evcharging.svg";
 
 const Solutions = () => {
   return (
@@ -23,18 +24,16 @@ const Solutions = () => {
             <div className="bg-primary/10 w-full h-full absolute -left-6 -top-6 rounded-xl"></div>
             <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1648326311535-21bdbe679366?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                alt="Borne de recharge en copropriété" 
+                src={evchargingImage} 
+                alt="Infrastructure de recharge en copropriété" 
                 className="w-full h-auto object-cover"
               />
             </div>
             
             <div className="absolute -right-8 -bottom-8 bg-white p-4 rounded-lg shadow-xl z-20">
-              <img 
-                src="https://images.unsplash.com/photo-1593476087123-36d1de271411?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" 
-                alt="Détail du système de recharge" 
-                className="w-24 h-24 object-cover rounded-md"
-              />
+              <div className="flex items-center justify-center bg-secondary/20 w-24 h-24 rounded-md">
+                <i className="fas fa-plug text-secondary text-3xl"></i>
+              </div>
             </div>
           </div>
           
@@ -122,11 +121,11 @@ const Solutions = () => {
           
           <div className="order-1 lg:order-2 relative">
             <div className="bg-secondary/10 w-full h-full absolute -right-6 -top-6 rounded-xl"></div>
-            <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl">
+            <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl flex items-center justify-center p-8 bg-white">
               <img 
-                src="https://images.unsplash.com/photo-1592001494534-d8fd0cb87d75?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                src={evchargingImage} 
                 alt="Installation progressive en copropriété" 
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
             
@@ -145,12 +144,7 @@ const Solutions = () => {
             </div>
           </div>
           <div className="max-w-4xl mx-auto bg-white p-4 rounded-2xl shadow-xl">
-            <div className="relative pt-[56.25%] rounded-xl overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1561566992-2918a815e44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                alt="Vidéo sur la recharge en habitat collectif" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+            <div className="relative pt-[56.25%] rounded-xl overflow-hidden bg-gray-100">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-20 h-20 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300">
                   <i className="fas fa-play text-primary text-2xl ml-1"></i>
