@@ -1,8 +1,30 @@
-import { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 
 const FAQ = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0); // Premier élément ouvert par défaut
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
+  
+  // Petit effet d'animation qui ouvre un élément différent toutes les 5 secondes (uniquement si aucun n'est déjà ouvert manuellement)
+  useEffect(() => {
+    if (!isInView) return;
+    
+    const interval = setInterval(() => {
+      // Ne pas changer si l'utilisateur a cliqué manuellement
+      if (activeIndex !== null && document.activeElement?.tagName === 'BUTTON') {
+        return;
+      }
+      
+      setActiveIndex(prevIndex => {
+        const nextIndex = prevIndex === null ? 0 : (prevIndex + 1) % faqItems.length;
+        return nextIndex;
+      });
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, [isInView]);
   
   const faqItems = [
     {
