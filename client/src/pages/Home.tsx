@@ -4,13 +4,13 @@ import Solutions from "@/components/Solutions";
 import Advantages from "@/components/Advantages";
 import Process from "@/components/Process";
 import ParallaxSection from "@/components/ParallaxSection";
-import Testimonials from "@/components/Testimonials";
-import CTA from "@/components/CTA";
+import Testimonials from "@/components/EnhancedTestimonials";
+
 import FAQ from "@/components/ModernFAQ";
 import QuoteForm from "@/components/QuoteForm";
-import Gallery from "@/components/ImageGallery";
+import Gallery from "@/components/EnhancedGallery";
 import Contact from "@/components/Contact";
-import ReadyToPlug from "@/components/ReadyToPlug";
+
 import { useEffect } from "react";
 
 const Home = () => {
@@ -43,15 +43,13 @@ const Home = () => {
       <HeroSection />
       <Introduction />
       <Solutions />
-      <ReadyToPlug />
       <Advantages />
       <Process />
       <ParallaxSection />
       <Testimonials />
-      <CTA />
+      <Gallery />
       <FAQ />
       <QuoteForm />
-      <Gallery />
       <Contact />
     </main>
   );
