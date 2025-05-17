@@ -4,40 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Animations personnalisées */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes slideRight {
-  from { transform: translateX(-20px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes scaleIn {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.animate-fadeIn { animation: fadeIn 0.6s ease-out forwards; }
-.animate-slideUp { animation: slideUp 0.6s ease-out forwards; }
-.animate-slideRight { animation: slideRight 0.6s ease-out forwards; }
-.animate-scaleIn { animation: scaleIn 0.5s ease-out forwards; }
-
-.animate-delay-100 { animation-delay: 0.1s; }
-.animate-delay-200 { animation-delay: 0.2s; }
-.animate-delay-300 { animation-delay: 0.3s; }
-.animate-delay-400 { animation-delay: 0.4s; }
-
-.hover-lift { transition: transform 0.3s ease-out; }
-.hover-lift:hover { transform: translateY(-5px); }
-
 :root {
   --background: 0 0% 100%;
   --foreground: 20 14.3% 4.1%;

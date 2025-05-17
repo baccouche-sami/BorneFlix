@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import HeroAnimation from "./HeroAnimation";
 
 const HeroSection = () => {
   const sectionRef = useRef(null);
@@ -8,31 +9,9 @@ const HeroSection = () => {
   
   return (
     <section ref={sectionRef} className="relative overflow-hidden bg-gradient-to-r from-[#003566] to-[#001d3d] text-white">
-      {/* Cercles décoratifs en arrière-plan avec animations */}
-      <motion.div 
-        className="absolute top-0 right-0 w-[650px] h-[650px] rounded-full bg-gradient-to-br from-[#8dc63f]/20 to-blue-400/10 blur-3xl -translate-y-1/2 translate-x-1/4"
-        animate={{
-          scale: [1, 1.05, 1],
-          opacity: [0.3, 0.4, 0.3],
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div 
-        className="absolute -bottom-20 left-0 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-yellow-300/20 to-purple-400/5 blur-3xl translate-y-1/4 -translate-x-1/4"
-        animate={{
-          scale: [1, 1.08, 1],
-          opacity: [0.2, 0.3, 0.2],
-        }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      />
-      <motion.div 
-        className="absolute top-1/2 left-1/3 w-[300px] h-[300px] rounded-full bg-gradient-to-bl from-cyan-400/10 to-blue-500/5 blur-3xl"
-        animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.15, 0.25, 0.15],
-        }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
+      {/* Cercles décoratifs en arrière-plan */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#8dc63f]/10 blur-3xl -translate-y-1/2 translate-x-1/4"></div>
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-yellow-200/10 blur-3xl translate-y-1/4 -translate-x-1/4"></div>
       
       <div className="container mx-auto px-4 py-20 md:py-28 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -74,42 +53,18 @@ const HeroSection = () => {
               
               {/* Trust badges */}
               <div className="flex flex-wrap gap-5 items-center">
-                <motion.div 
-                  className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 hover:bg-white/15 transition-all duration-300 cursor-pointer"
-                  whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(141, 198, 63, 0.2)" }}
-                >
-                  <div className="w-10 h-10 rounded-full bg-[#8dc63f]/20 flex items-center justify-center mr-3 text-[#8dc63f]">
-                    <i className="fas fa-certificate text-lg"></i>
-                  </div>
-                  <div>
-                    <span className="text-sm font-medium block">IRVE certifié</span>
-                    <span className="text-xs text-white/70">Installateurs qualifiés</span>
-                  </div>
-                </motion.div>
-                <motion.div 
-                  className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 hover:bg-white/15 transition-all duration-300 cursor-pointer"
-                  whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(141, 198, 63, 0.2)" }}
-                >
-                  <div className="w-10 h-10 rounded-full bg-[#8dc63f]/20 flex items-center justify-center mr-3 text-[#8dc63f]">
-                    <i className="fas fa-euro-sign text-lg"></i>
-                  </div>
-                  <div>
-                    <span className="text-sm font-medium block">Aides financières</span>
-                    <span className="text-xs text-white/70">Jusqu'à 50% de subventions</span>
-                  </div>
-                </motion.div>
-                <motion.div 
-                  className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 hover:bg-white/15 transition-all duration-300 cursor-pointer"
-                  whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(141, 198, 63, 0.2)" }}
-                >
-                  <div className="w-10 h-10 rounded-full bg-[#8dc63f]/20 flex items-center justify-center mr-3 text-[#8dc63f]">
-                    <i className="fas fa-tools text-lg"></i>
-                  </div>
-                  <div>
-                    <span className="text-sm font-medium block">Maintenance incluse</span>
-                    <span className="text-xs text-white/70">Support technique 24/7</span>
-                  </div>
-                </motion.div>
+                <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 hover:bg-white/15 transition-colors duration-300">
+                  <div className="text-[#8dc63f] mr-3"><i className="fas fa-certificate"></i></div>
+                  <span className="text-sm font-medium">IRVE certifié</span>
+                </div>
+                <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 hover:bg-white/15 transition-colors duration-300">
+                  <div className="text-[#8dc63f] mr-3"><i className="fas fa-euro-sign"></i></div>
+                  <span className="text-sm font-medium">Aides financières</span>
+                </div>
+                <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 hover:bg-white/15 transition-colors duration-300">
+                  <div className="text-[#8dc63f] mr-3"><i className="fas fa-tools"></i></div>
+                  <span className="text-sm font-medium">Maintenance incluse</span>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -134,35 +89,9 @@ const HeroSection = () => {
                   className="w-full h-full object-cover scale-110 z-10 relative"
                 />
                 
-                {/* Overlay avec des éléments animés */}
-                <div className="absolute inset-0 z-20 opacity-60 mix-blend-screen overflow-hidden">
-                  <motion.div 
-                    className="absolute top-1/4 right-1/4 w-16 h-16 rounded-full bg-blue-400"
-                    animate={{ 
-                      y: [0, -10, 0], 
-                      opacity: [0.6, 1, 0.6],
-                      scale: [1, 1.1, 1]
-                    }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  />
-                  <motion.div 
-                    className="absolute bottom-1/4 left-1/3 w-12 h-12 rounded-full bg-green-400"
-                    animate={{ 
-                      y: [0, 10, 0], 
-                      opacity: [0.4, 0.8, 0.4],
-                      scale: [1, 1.2, 1]
-                    }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  />
-                  <motion.div 
-                    className="absolute top-1/2 left-1/4 w-10 h-10 rounded-full bg-yellow-300"
-                    animate={{ 
-                      x: [0, 10, 0], 
-                      opacity: [0.5, 0.9, 0.5],
-                      scale: [1, 1.1, 1]
-                    }}
-                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  />
+                {/* Animation 3D avec Three.js */}
+                <div className="absolute inset-0 z-20 opacity-30 mix-blend-screen">
+                  <HeroAnimation />
                 </div>
                 
                 {/* Fil décoratif */}
@@ -206,100 +135,33 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Stats banner avec des animations */}
+      {/* Stats banner */}
       <div className="relative bg-white">
-        {/* Éléments décoratifs */}
-        <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-[#8dc63f]/30 to-transparent"></div>
-        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12">
-          <motion.div
-            className="w-full h-full rounded-full bg-gradient-to-r from-[#003566] to-[#8dc63f]"
-            animate={{ 
-              scale: [0.8, 1, 0.8],
-              opacity: [0.7, 1, 0.7]
-            }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </div>
-        
-        <div className="container mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            <motion.div 
-              className="flex flex-col items-center text-center bg-[#f8fafc] rounded-xl p-8 shadow-lg shadow-[#003566]/5 border border-gray-100 transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.5 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="bg-[#003566]/10 w-20 h-20 rounded-full flex items-center justify-center mb-6 text-[#003566] relative">
-                <div className="absolute inset-0 rounded-full bg-[#003566]/5 animate-ping opacity-50"></div>
-                <i className="fas fa-plug text-3xl"></i>
+        <div className="container mx-auto px-4 py-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex flex-col items-center text-center">
+              <div className="bg-[#003566]/5 w-16 h-16 rounded-full flex items-center justify-center mb-4 text-[#003566]">
+                <i className="fas fa-plug text-2xl"></i>
               </div>
-              <h3 className="text-4xl font-bold text-[#003566] mb-3 relative">
-                <span className="relative inline-block">
-                  +2500
-                  <motion.span 
-                    className="absolute -right-4 -top-2 text-sm text-[#8dc63f] font-medium"
-                    animate={{ y: [0, -5, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <i className="fas fa-arrow-up"></i>
-                  </motion.span>
-                </span>
-              </h3>
-              <p className="text-gray-600 text-lg">Bornes installées en copropriété</p>
-            </motion.div>
+              <h3 className="text-3xl font-bold text-[#003566] mb-2">+2500</h3>
+              <p className="text-gray-600">Bornes installées en copropriété</p>
+            </div>
             
-            <motion.div 
-              className="flex flex-col items-center text-center bg-[#f8fafc] rounded-xl p-8 shadow-lg shadow-[#8dc63f]/5 border border-gray-100 transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="bg-[#8dc63f]/10 w-20 h-20 rounded-full flex items-center justify-center mb-6 text-[#8dc63f] relative">
-                <div className="absolute inset-0 rounded-full bg-[#8dc63f]/5 animate-ping opacity-50"></div>
-                <i className="fas fa-building text-3xl"></i>
+            <div className="flex flex-col items-center text-center">
+              <div className="bg-[#8dc63f]/10 w-16 h-16 rounded-full flex items-center justify-center mb-4 text-[#8dc63f]">
+                <i className="fas fa-building text-2xl"></i>
               </div>
-              <h3 className="text-4xl font-bold text-[#003566] mb-3 relative">
-                <span className="relative inline-block">
-                  +150
-                  <motion.span 
-                    className="absolute -right-4 -top-2 text-sm text-[#8dc63f] font-medium"
-                    animate={{ y: [0, -5, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  >
-                    <i className="fas fa-arrow-up"></i>
-                  </motion.span>
-                </span>
-              </h3>
-              <p className="text-gray-600 text-lg">Copropriétés équipées</p>
-            </motion.div>
+              <h3 className="text-3xl font-bold text-[#003566] mb-2">+150</h3>
+              <p className="text-gray-600">Copropriétés équipées</p>
+            </div>
             
-            <motion.div 
-              className="flex flex-col items-center text-center bg-[#f8fafc] rounded-xl p-8 shadow-lg shadow-yellow-500/5 border border-gray-100 transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <div className="bg-yellow-100 w-20 h-20 rounded-full flex items-center justify-center mb-6 text-yellow-600 relative">
-                <div className="absolute inset-0 rounded-full bg-yellow-500/5 animate-ping opacity-50"></div>
-                <i className="fas fa-euro-sign text-3xl"></i>
+            <div className="flex flex-col items-center text-center">
+              <div className="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 text-yellow-600">
+                <i className="fas fa-euro-sign text-2xl"></i>
               </div>
-              <h3 className="text-4xl font-bold text-[#003566] mb-3 relative">
-                <span className="relative inline-block">
-                  -50%
-                  <motion.span 
-                    className="absolute -right-4 -top-2 text-sm text-yellow-500 font-medium"
-                    animate={{ y: [0, -5, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  >
-                    <i className="fas fa-check"></i>
-                  </motion.span>
-                </span>
-              </h3>
-              <p className="text-gray-600 text-lg">Sur le coût d'installation grâce aux aides</p>
-            </motion.div>
+              <h3 className="text-3xl font-bold text-[#003566] mb-2">-50%</h3>
+              <p className="text-gray-600">Sur le coût d'installation grâce aux aides</p>
+            </div>
           </div>
         </div>
       </div>

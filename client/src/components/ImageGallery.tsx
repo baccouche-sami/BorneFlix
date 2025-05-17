@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 import { AnimateOnScroll } from './ui/animate-on-scroll';
 
 interface GalleryImage {
@@ -56,161 +55,80 @@ const galleryData: GalleryImage[] = [
 ];
 
 const ImageGallery = () => {
-  const [activeImage, setActiveImage] = useState<number | null>(null);
-  
-  const handleImageHover = (id: number) => {
-    setActiveImage(id);
-  };
-  
-  const handleImageLeave = () => {
-    setActiveImage(null);
-  };
-  
   return (
-    <section id="galerie" className="py-24 bg-gradient-to-br from-[#f8fafc] via-white to-gray-50 relative overflow-hidden">
-      {/* Cercles décoratifs en arrière-plan */}
-      <div className="absolute top-40 left-10 w-64 h-64 rounded-full bg-[#8dc63f]/5 blur-3xl"></div>
-      <div className="absolute bottom-40 right-10 w-80 h-80 rounded-full bg-[#003566]/5 blur-3xl"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#8dc63f]/10 opacity-20"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <div className="inline-block bg-[#8dc63f]/10 text-[#8dc63f] px-6 py-2 rounded-full text-sm font-medium mb-4">
-            NOS RÉALISATIONS
+    <section id="galerie" className="py-24 bg-gradient-to-r from-[#f8fafc] to-gray-100">
+      <div className="container mx-auto px-4">
+        <AnimateOnScroll animation="fade" threshold={0.1} delay={0.1}>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-block bg-[#8dc63f]/10 text-[#8dc63f] px-6 py-2 rounded-full text-sm font-medium mb-4">
+              NOS RÉALISATIONS
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003566]">Nos installations récentes</h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Découvrez quelques exemples d'installations de bornes de recharge en copropriété 
+              réalisées par notre équipe d'experts pour nos clients.
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003566]">Nos installations récentes</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            Découvrez quelques exemples d'installations de bornes de recharge en copropriété 
-            réalisées par notre équipe d'experts certifiés IRVE pour nos clients.
-          </p>
-        </motion.div>
+        </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleryData.map((item, index) => (
-            <motion.div 
-              key={item.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.1 }}
-              transition={{ duration: 0.5, delay: 0.1 * (index % 3) }}
-              onHoverStart={() => handleImageHover(item.id)}
-              onHoverEnd={handleImageLeave}
+            <AnimateOnScroll 
+              key={item.id} 
+              animation="slide-up" 
+              threshold={0.1} 
+              delay={0.1 * (index % 3)}
               className="h-full"
             >
-              <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 h-full flex flex-col transform hover:-translate-y-2">
-                <div className="relative h-72 overflow-hidden">
-                  {/* Overlay gradient */}
-                  <div 
-                    className={`absolute inset-0 bg-gradient-to-t from-[#003566]/80 via-transparent to-transparent z-10 transition-opacity duration-700 ${
-                      activeImage === item.id ? 'opacity-100' : 'opacity-0'
-                    }`}
-                  />
-                  
-                  {/* Border lumineux animé */}
-                  <motion.div 
-                    className={`absolute inset-0 z-20 border-2 border-transparent rounded-t-2xl transition-all duration-500 ${
-                      activeImage === item.id ? 'border-[#8dc63f]/50' : ''
-                    }`}
-                    animate={
-                      activeImage === item.id 
-                        ? { 
-                            boxShadow: ['0 0 0px 0px rgba(141, 198, 63, 0)', '0 0 20px 2px rgba(141, 198, 63, 0.3)', '0 0 0px 0px rgba(141, 198, 63, 0)'] 
-                          } 
-                        : {}
-                    }
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  />
-                  
-                  {/* Image principale */}
-                  <motion.img 
+              <div className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] h-full flex flex-col">
+                <div className="relative h-64 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <img 
                     src={item.imageUrl} 
                     alt={item.title}
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                     loading="lazy"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.7 }}
                   />
-                  
-                  {/* Contenu au survol */}
-                  <motion.div 
-                    className="absolute bottom-0 left-0 right-0 p-6 z-20"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ 
-                      opacity: activeImage === item.id ? 1 : 0,
-                      y: activeImage === item.id ? 0 : 20
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <span className="text-white/80 text-sm font-medium inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full mb-3">
-                      <i className="fas fa-map-marker-alt mr-2"></i>
-                      {item.location}
-                    </span>
-                    <h3 className="text-white font-bold text-2xl mb-2">{item.title}</h3>
-                    <p className="text-white/90">{item.description}</p>
-                  </motion.div>
-                </div>
-                
-                <div className="p-6 flex-grow flex flex-col">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-bold text-[#003566]">{item.title}</h3>
-                    <span className="bg-[#003566]/10 text-[#003566] text-xs font-medium px-2 py-1 rounded-full">
-                      Installation {2023 - index}
-                    </span>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                    <span className="text-white/80 text-sm block mb-2">{item.location}</span>
+                    <h3 className="text-white font-bold text-xl mb-2">{item.title}</h3>
+                    <p className="text-white/90 text-sm">{item.description}</p>
                   </div>
-                  <p className="text-gray-600 flex-grow">
-                    {item.description}
-                  </p>
-                  <div className="mt-5 pt-5 border-t border-gray-100 flex justify-between items-center">
-                    <span className="text-[#8dc63f] text-sm">
-                      <i className="fas fa-check-circle mr-2"></i>
-                      Installation certifiée
-                    </span>
-                    <motion.a 
+                </div>
+                <div className="p-6 flex-grow flex flex-col">
+                  <span className="text-[#8dc63f] text-sm block mb-2">{item.location}</span>
+                  <h3 className="text-xl font-bold text-[#003566] mb-2">{item.title}</h3>
+                  <p className="text-gray-600 flex-grow">{item.description}</p>
+                  <div className="mt-4 pt-4 border-t border-gray-100">
+                    <a 
                       href="#devis" 
-                      className="inline-flex items-center text-[#003566] font-medium text-sm group/link"
-                      whileHover={{ x: 5 }}
+                      className="inline-flex items-center text-[#003566] hover:text-[#8dc63f] transition-colors duration-200 font-medium text-sm"
                     >
-                      En savoir plus
-                      <motion.span 
-                        initial={{ x: 0 }} 
-                        whileHover={{ x: 5 }}
-                        className="ml-2 text-[#8dc63f]"
-                      >
-                        <i className="fas fa-arrow-right"></i>
-                      </motion.span>
-                    </motion.a>
+                      Découvrir ce projet
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </AnimateOnScroll>
           ))}
         </div>
         
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.1 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="text-center mt-16"
-        >
-          <div className="inline-block bg-white px-8 py-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300">
-            <h3 className="text-2xl font-semibold text-[#003566] mb-3">Vous souhaitez équiper votre copropriété ?</h3>
-            <p className="text-gray-600 mb-5">Obtenez une étude personnalisée et un devis gratuit</p>
+        <AnimateOnScroll animation="fade" threshold={0.1} delay={0.3}>
+          <div className="text-center mt-12">
             <a 
               href="#devis" 
-              className="inline-flex items-center bg-[#003566] text-white hover:bg-[#1a4d85] py-3 px-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 font-medium"
+              className="inline-flex items-center bg-[#003566] text-white hover:bg-[#1a4d85] py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 font-medium"
             >
-              Demander un devis
-              <i className="fas fa-arrow-right ml-3"></i>
+              Demander un devis pour votre copropriété
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </a>
           </div>
-        </motion.div>
+        </AnimateOnScroll>
       </div>
     </section>
   );
