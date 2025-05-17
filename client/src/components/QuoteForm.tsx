@@ -385,7 +385,7 @@ const QuoteForm = () => {
                       </div>
                     </div>
 
-                    <div className="space-y-3">
+                    <div className="space-y-3 animate-slideUp animate-delay-200">
                       <Label htmlFor="email" className="text-gray-700 font-medium">
                         Email <span className="text-red-500">*</span>
                       </Label>
