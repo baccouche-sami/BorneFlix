@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -12,6 +13,16 @@ import { useToast } from "@/hooks/use-toast";
 const QuoteForm = () => {
   const { toast } = useToast();
   const [currentStep, setCurrentStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFormComplete, setIsFormComplete] = useState(false);
+  const formRef = useRef(null);
+  
+  // Variantes d'animation pour les transitions de formulaires
+  const formVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+    exit: { opacity: 0, x: -50, transition: { duration: 0.3 } }
+  };
   const [formData, setFormData] = useState({
     // Step 1: Information de base
     nom: "",
@@ -108,8 +119,6 @@ const QuoteForm = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
