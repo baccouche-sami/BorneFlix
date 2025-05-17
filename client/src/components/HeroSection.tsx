@@ -7,14 +7,7 @@ import readyToPlugImage from "@/assets/readytoplug.svg";
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden">
-      {/* Blue notification banner at top */}
-      <div className="w-full bg-blue-50 text-blue-800 py-2 px-4 text-center">
-        <div className="container mx-auto">
-          <p className="text-xs sm:text-sm font-medium">
-            <span className="mr-1">✨</span> Profitez des aides financières ADVENIR jusqu'à 50% pour l'installation de bornes en copropriété <span className="ml-1">✨</span>
-          </p>
-        </div>
-      </div>
+      {/* La bannière de notification est maintenant dans le header */}
       
       <div className="bg-gradient-to-b from-[#f8fafc] to-white">
         <div className="container mx-auto px-4 pt-20 pb-24 md:pt-24 md:pb-32 relative z-10">
