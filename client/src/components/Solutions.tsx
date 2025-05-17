@@ -30,7 +30,7 @@ const Solutions = () => {
           <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-primary hover:shadow-xl transition-shadow duration-300">
             <div className="h-48 overflow-hidden bg-primary/5">
               <img 
-                src="/images/reelles/borne-recharge.jpg" 
+                src={import.meta.env.DEV ? '/src/assets/borne-recharge.jpg' : '/images/reelles/borne-recharge.jpg'} 
                 alt="Infrastructure de recharge collective en copropriété"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />

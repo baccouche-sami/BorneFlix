@@ -64,7 +64,7 @@ const Header = () => {
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled || isMobileMenuOpen
           ? 'bg-white shadow-md py-3' 
-          : 'bg-transparent py-5'
+          : 'bg-[#003566] md:bg-transparent py-5'
       }`}
     >
       <div className="container mx-auto px-4">

@@ -73,7 +73,7 @@ const HeroSection = () => {
                 {/* Main image */}
                 <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
                   <img 
-                    src="/images/reelles/station-solaire.jpg" 
+                    src={import.meta.env.DEV ? '/src/assets/station-solaire.jpg' : '/images/reelles/station-solaire.jpg'} 
                     alt="Borne de recharge avec panneaux solaires pour véhicule électrique en copropriété" 
                     className="w-full h-auto object-cover"
                     style={{ maxHeight: '450px' }}
