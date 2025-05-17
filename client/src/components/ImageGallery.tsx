@@ -12,45 +12,45 @@ interface GalleryImage {
 const galleryData: GalleryImage[] = [
   {
     id: 1,
-    title: "Borne Rapide Premium",
-    location: "Résidence Les Oliviers, Paris",
-    description: "Installation de 8 bornes de recharge 22kW avec système de gestion intelligente",
-    imageUrl: "https://images.unsplash.com/photo-1638248312804-618827a2fe66?w=800&auto=format&fit=crop&q=60"
+    title: "Borne Solaire Premium",
+    location: "Centre Commercial Éco-Park, Montpellier",
+    description: "Installation de stations solaires pour recharge écologique et autonome",
+    imageUrl: "/images/gallery/pexels-kindelmedia-9800030.jpg"
   },
   {
     id: 2,
-    title: "Équipement Résidentiel",
-    location: "Immeuble Le Grand Parc, Lyon",
-    description: "Mise en place d'une infrastructure pour 25 places avec évolutivité",
-    imageUrl: "https://images.unsplash.com/photo-1647165507872-cbbe257ed9ea?w=800&auto=format&fit=crop&q=60"
+    title: "Partenariat et Installation",
+    location: "Résidence Les Terrasses, Nantes",
+    description: "Accompagnement complet depuis l'étude technique jusqu'à la livraison finale",
+    imageUrl: "/images/gallery/images-13.png"
   },
   {
     id: 3,
     title: "Borne Connectée Pro",
     location: "Copropriété Les Cèdres, Bordeaux",
-    description: "Solution complète avec monitoring et facturation automatique",
-    imageUrl: "https://images.unsplash.com/photo-1658896851375-e16223a1e858?w=800&auto=format&fit=crop&q=60"
+    description: "Solution française avec affichage 'Roulez Électrique' et connectivité avancée",
+    imageUrl: "/images/gallery/images-4.png"
   },
   {
     id: 4,
-    title: "Station Multi-Véhicules",
-    location: "Résidence du Parc, Nantes",
-    description: "Borne ultra-rapide avec système de répartition de charge",
-    imageUrl: "https://images.unsplash.com/photo-1647404600566-d5e87e158b20?w=800&auto=format&fit=crop&q=60"
+    title: "Gestion Financière",
+    location: "Immeuble Le Phare, Lille",
+    description: "Solutions de financement adaptées et optimisation des coûts pour les copropriétés",
+    imageUrl: "/images/gallery/images-1.png"
   },
   {
     id: 5,
-    title: "Borne Extérieure Sécurisée",
-    location: "Les Jardins de Saint-Cloud, Paris",
-    description: "Installation résistante aux intempéries avec protection anti-vandalisme",
-    imageUrl: "https://images.unsplash.com/photo-1635598907992-970cbf09fed7?w=800&auto=format&fit=crop&q=60"
+    title: "Installation Express",
+    location: "Résidence Grand Angle, Lyon",
+    description: "Mise en service rapide avec raccordement aux standards européens",
+    imageUrl: "/images/gallery/recharge-img01.jpeg"
   },
   {
     id: 6,
-    title: "Solution Parking Souterrain",
-    location: "Tour Horizon, Marseille",
-    description: "Équipement de 15 places avec système de détection d'incendie intégré",
-    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bfac3492d9?w=800&auto=format&fit=crop&q=60"
+    title: "Solution Collective",
+    location: "Les Jardins Connectés, Paris",
+    description: "Infrastructure multi-bornes pour grandes copropriétés avec gestion intelligente",
+    imageUrl: "/images/gallery/recharge-img02.jpeg"
   },
 ];
 
