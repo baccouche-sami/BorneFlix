@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-// Import images directement à partir des chemins relatifs
-const collectiveImage = "/src/assets/images/collective-infrastructure.jpg";
-const individualImage = "/src/assets/images/individual-solution.jpg";
-const preEquipmentImage = "/src/assets/images/pre-equipment.jpg";
+// Utilisation des images existantes dans le dossier public
+const collectiveImage = "/images/ev-charging-3.jpg";
+const individualImage = "/images/ev-charging-4.jpg";
+const preEquipmentImage = "/images/apartment-parking.jpg";
 
 const Solutions = () => {
   return (
@@ -315,7 +315,7 @@ const Solutions = () => {
             </div>
             <div className="hidden lg:block lg:pr-8">
               <img 
-                src="/src/assets/images/ev-charging.jpg"
+                src="/images/ev-charging-2.jpg"
                 alt="Borne de recharge véhicule électrique" 
                 className="rounded-xl shadow-lg"
               />
