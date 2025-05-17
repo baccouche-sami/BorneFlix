@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-// Utilisation des images existantes dans le dossier public
-const collectiveImage = "/images/ev-charging-3.jpg";
-const individualImage = "/images/ev-charging-4.jpg";
-const preEquipmentImage = "/images/apartment-parking.jpg";
+// Utilisation des SVG existants dans le projet
+import evchargingImage from "@/assets/evcharging.svg";
+import featuresGridImage from "@/assets/features-grid.svg";
+import readyToPlugImage from "@/assets/readytoplug.svg";
+import circularImage from "@/assets/circular-image.svg";
 
 const Solutions = () => {
   return (
@@ -25,11 +26,11 @@ const Solutions = () => {
         {/* Solution tabs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-primary hover:shadow-xl transition-shadow duration-300">
-            <div className="h-48 overflow-hidden">
+            <div className="h-48 overflow-hidden bg-primary/5 flex items-center justify-center p-4">
               <img 
-                src={collectiveImage} 
+                src={evchargingImage} 
                 alt="Infrastructure de recharge collective en copropriété"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="p-6">
@@ -61,11 +62,11 @@ const Solutions = () => {
           </Card>
           
           <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-secondary hover:shadow-xl transition-shadow duration-300">
-            <div className="h-48 overflow-hidden">
+            <div className="h-48 overflow-hidden bg-secondary/5 flex items-center justify-center p-4">
               <img 
-                src={individualImage} 
+                src={readyToPlugImage} 
                 alt="Solution individuelle de recharge en copropriété"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="p-6">
@@ -97,11 +98,11 @@ const Solutions = () => {
           </Card>
           
           <Card className="bg-white rounded-xl overflow-hidden shadow-lg border-t-4 border-accent hover:shadow-xl transition-shadow duration-300">
-            <div className="h-48 overflow-hidden">
+            <div className="h-48 overflow-hidden bg-accent/5 flex items-center justify-center p-4">
               <img 
-                src={preEquipmentImage} 
+                src={featuresGridImage} 
                 alt="Pré-équipement pour bornes de recharge"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="p-6">
@@ -200,13 +201,15 @@ const Solutions = () => {
               </div>
             </div>
             
-            <div className="lg:col-span-7 order-1 lg:order-2 relative">
-              <img 
-                src={collectiveImage} 
-                alt="Infrastructure de recharge collective en copropriété" 
-                className="w-full h-full object-cover"
-                style={{ maxHeight: '600px' }}
-              />
+            <div className="lg:col-span-7 order-1 lg:order-2 relative bg-primary/5 p-6">
+              <div className="flex items-center justify-center h-full">
+                <img 
+                  src={evchargingImage} 
+                  alt="Infrastructure de recharge collective en copropriété" 
+                  className="max-w-full h-auto object-contain"
+                  style={{ maxHeight: '400px' }}
+                />
+              </div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-8 text-white">
                 <div className="flex items-center mb-2">
                   <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center mr-4">
@@ -315,7 +318,7 @@ const Solutions = () => {
             </div>
             <div className="hidden lg:block lg:pr-8">
               <img 
-                src="/images/ev-charging-2.jpg"
+                src={evchargingImage}
                 alt="Borne de recharge véhicule électrique" 
                 className="rounded-xl shadow-lg"
               />
