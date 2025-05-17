@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import chargerStationImage from "@/assets/images/charger-station.jpg";
-import parkingChargerImage from "@/assets/images/parking-charger.jpg";
-import evChargingImage from "@/assets/images/ev-charging.jpg";
+// Import images directement à partir des chemins relatifs
+const chargerStationImage = "/src/assets/images/charger-station.jpg";
+const parkingChargerImage = "/src/assets/images/parking-charger.jpg";
+const evChargingImage = "/src/assets/images/ev-charging.jpg";
 
 const HeroSection = () => {
   return (
