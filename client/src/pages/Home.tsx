@@ -9,6 +9,7 @@ import FAQ from "@/components/FAQ";
 import QuoteForm from "@/components/QuoteForm";
 import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
+import ReadyToPlug from "@/components/ReadyToPlug";
 import { useEffect } from "react";
 
 const Home = () => {
@@ -41,6 +42,7 @@ const Home = () => {
       <HeroSection />
       <Introduction />
       <Solutions />
+      <ReadyToPlug />
       <Advantages />
       <Process />
       <Testimonials />

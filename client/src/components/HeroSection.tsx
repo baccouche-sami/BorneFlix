@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero.svg";
+import circularImage from "@/assets/circular-image.svg";
 
 const HeroSection = () => {
   return (
@@ -9,12 +9,18 @@ const HeroSection = () => {
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 rounded-full translate-x-1/2 translate-y-1/2 z-0"></div>
       <div className="absolute top-20 right-20 w-32 h-32 bg-accent/20 rounded-full z-0"></div>
       
+      {/* Pink notification banner at top */}
+      <div className="w-full bg-pink-100 text-pink-800 py-2 px-4 text-center">
+        <div className="container mx-auto">
+          <p className="text-sm font-medium">
+            <span className="mr-1">✨</span> Profitez des aides financières ADVENIR pour l'installation de bornes en copropriété <span className="ml-1">✨</span>
+          </p>
+        </div>
+      </div>
+      
       <div className="container mx-auto px-4 py-24 md:py-32 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="bg-pink-100 text-pink-800 rounded-full inline-flex items-center px-4 py-1 text-sm font-medium mb-6">
-              <span className="mr-1">✨</span> Installation rapide et financement optimisé
-            </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
               La recharge en <span className="text-secondary">copropriété</span> n'a jamais été aussi simple
             </h1>
@@ -37,11 +43,11 @@ const HeroSection = () => {
           
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="bg-white w-[450px] h-[450px] rounded-full overflow-hidden shadow-xl">
+              <div className="w-[450px] h-[450px] overflow-hidden">
                 <img 
-                  src={heroImage} 
+                  src={circularImage} 
                   alt="Borne de recharge pour véhicule électrique" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div className="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4">
