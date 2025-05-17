@@ -38,13 +38,13 @@ const HeroSection = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
-                <a href="#devis">
-                  <Button size="lg" className="bg-secondary hover:bg-green-600 text-white font-medium py-6 px-8 rounded-full shadow-lg shadow-secondary/30 transition-all duration-300 hover:translate-y-[-2px]">
+                <a href="#devis" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full sm:w-auto bg-secondary hover:bg-green-600 text-white font-medium py-6 px-8 rounded-full shadow-lg shadow-secondary/30 transition-all duration-300 hover:translate-y-[-2px]">
                     Demander un devis gratuit
                   </Button>
                 </a>
-                <a href="#solutions">
-                  <Button variant="outline" size="lg" className="border-2 border-primary hover:bg-primary hover:text-white text-primary font-medium py-6 px-8 rounded-full transition-all duration-300">
+                <a href="#solutions" className="w-full sm:w-auto">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-primary hover:bg-primary hover:text-white text-primary font-medium py-6 px-8 rounded-full transition-all duration-300">
                     Nos solutions
                   </Button>
                 </a>

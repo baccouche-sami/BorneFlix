@@ -81,12 +81,12 @@ const Header = () => {
           <div className="md:hidden">
             <button 
               onClick={toggleMobileMenu}
-              className="focus:outline-none flex items-center space-x-2 px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
+              className="focus:outline-none flex items-center space-x-2 px-3 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
               aria-label="Menu principal"
               aria-expanded={isMobileMenuOpen}
             >
-              <span className={`text-sm font-medium transition-colors duration-300 ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Menu</span>
-              <i className={`${isMobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'} text-xl transition-colors duration-300 ${isScrolled ? 'text-primary' : 'text-white'}`}></i>
+              <span className="text-sm font-medium text-white">Menu</span>
+              <i className={`${isMobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'} text-xl text-white`}></i>
             </button>
           </div>
           
