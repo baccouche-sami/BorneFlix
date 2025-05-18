@@ -238,7 +238,7 @@ const QuoteForm = () => {
                 {getStepIcon(step)}
                 
                 {/* Step number badge */}
-                <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white shadow-md flex items-center justify-center text-xs font-bold border border-gray-100">
+                <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white shadow-md flex items-center justify-center text-xs  text-[#003566] font-bold border border-gray-100">
                   {step}
                 </div>
               </div>
@@ -288,7 +288,7 @@ const QuoteForm = () => {
     <section id="devis" className="py-24 bg-gradient-to-r from-[#f8fafc] to-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-block bg-[#8dc63f]/10 text-[#8dc63f] px-6 py-2 rounded-full text-sm font-medium mb-4">
+          <div className="inline-block bg-[#8dc63f]/10 text-[#8dc63f] px-6 py-2 rounded-full text-sm font-bold mb-4">
             DEMANDE DE DEVIS GRATUIT
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003566]">Demandez votre devis personnalisé</h2>
@@ -300,19 +300,19 @@ const QuoteForm = () => {
           
           {/* Form benefits badges - improved design */}
           <div className="flex flex-wrap justify-center gap-6 mt-10">
-            <div className="bg-white rounded-full px-6 py-3 shadow-md flex items-center text-sm font-medium text-gray-800 hover:shadow-lg transition-shadow duration-300">
-              <div className="w-8 h-8 bg-[#8dc63f]/15 rounded-full flex items-center justify-center mr-3 text-[#8dc63f]">
+            <div className="bg-white rounded-full px-6 py-3 shadow-md flex items-center text-sm font-bold text-gray-800 hover:shadow-lg transition-shadow duration-300">
+              <div className="w-8 h-8 bg-[#8dc63f]/15 rounded-full flex items-center  justify-center mr-3 text-[#8dc63f]">
                 <i className="fas fa-check"></i>
               </div>
               Sans engagement
             </div>
-            <div className="bg-white rounded-full px-6 py-3 shadow-md flex items-center text-sm font-medium text-gray-800 hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-white rounded-full px-6 py-3 shadow-md flex items-center text-sm font-bold text-gray-800 hover:shadow-lg transition-shadow duration-300">
               <div className="w-8 h-8 bg-[#8dc63f]/15 rounded-full flex items-center justify-center mr-3 text-[#8dc63f]">
                 <i className="fas fa-clock"></i>
               </div>
               Réponse sous 24h
             </div>
-            <div className="bg-white rounded-full px-6 py-3 shadow-md flex items-center text-sm font-medium text-gray-800 hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-white rounded-full px-6 py-3 shadow-md flex items-center text-sm font-bold text-gray-800 hover:shadow-lg transition-shadow duration-300">
               <div className="w-8 h-8 bg-[#8dc63f]/15 rounded-full flex items-center justify-center mr-3 text-[#8dc63f]">
                 <i className="fas fa-user-check"></i>
               </div>
@@ -321,7 +321,7 @@ const QuoteForm = () => {
           </div>
         </div>
         
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-full mx-auto">
           <Card className="bg-white rounded-xl shadow-xl overflow-hidden border-0">
             <div className="bg-gradient-to-r from-[#003566] to-[#1a4d85] text-white p-8 text-center">
               <p className="text-sm uppercase tracking-wider font-medium mb-2">Étape {currentStep} sur {totalSteps}</p>
@@ -811,23 +811,6 @@ const QuoteForm = () => {
               </form>
             </CardContent>
           </Card>
-          
-          {/* Testimonial below form */}
-          <div className="mt-10 bg-white rounded-xl p-6 shadow-lg border border-gray-100">
-            <div className="flex items-start">
-              <div className="text-yellow-400 mr-3">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-              </div>
-              <div>
-                <p className="text-gray-700 italic">"Processus de devis très efficace et rapide. L'équipe de Borne Flix a été très professionnelle de bout en bout. Installation réalisée dans les délais annoncés."</p>
-                <p className="mt-2 font-medium text-gray-900">Michel Dubois, Président de conseil syndical</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

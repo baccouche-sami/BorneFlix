@@ -1,7 +1,76 @@
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import logo from "@/assets/logo.svg";
 
 const Footer = () => {
+  const { toast } = useToast();
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Gestion de l'inscription à la newsletter
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validation simple de l'email
+    if (!newsletterEmail) {
+      toast({
+        title: "Email requis",
+        description: "Veuillez entrer votre adresse email pour vous inscrire à la newsletter.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    // Vérification simple du format email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(newsletterEmail)) {
+      toast({
+        title: "Format invalide",
+        description: "Veuillez entrer une adresse email valide.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: newsletterEmail })
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        toast({
+          title: "Inscription réussie",
+          description: data.message || "Vous êtes désormais inscrit à notre newsletter. Merci !",
+        });
+        setNewsletterEmail("");
+      } else {
+        toast({
+          title: "Erreur",
+          description: data.message || "Une erreur est survenue lors de l'inscription. Veuillez réessayer.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'inscription à la newsletter:", error);
+      toast({
+        title: "Erreur de connexion",
+        description: "Impossible de contacter le serveur. Veuillez vérifier votre connexion et réessayer.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  
   return (
     <footer className="bg-[#003566] text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -30,7 +99,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <div className="mb-6">
-              <img src={logo} alt="BorneFlix Logo" className="h-10 w-auto" />
+              <div className="h-10">
+                <span className="text-white font-bold text-2xl tracking-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>BORNE<span className="text-[#8dc63f]">FLIX</span></span>
+              </div>
             </div>
             <p className="mb-6 text-gray-300 max-w-md">
               Solutions de recharge pour véhicules électriques en copropriété. Installation, maintenance et services personnalisés adaptés à vos besoins.
@@ -55,8 +126,8 @@ const Footer = () => {
                 Support technique
               </h4>
               <p className="text-sm text-gray-300 mb-2">Assistance disponible 7j/7</p>
-              <a href="tel:0123456789" className="text-white text-lg font-bold hover:text-secondary transition-colors">
-                01 23 45 67 89
+              <a href="tel:0180919080" className="text-white text-lg font-bold hover:text-secondary transition-colors">
+                01 80 91 90 80
               </a>
             </div>
           </div>
@@ -68,27 +139,27 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="hover:text-secondary transition-colors inline-block">
+                <a href="#solutions" className="hover:text-secondary transition-colors inline-block">
                   Infrastructure collective
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary transition-colors inline-block">
+                <a href="#solutions" className="hover:text-secondary transition-colors inline-block">
                   Solution individuelle
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary transition-colors inline-block">
+                <a href="#solutions" className="hover:text-secondary transition-colors inline-block">
                   Pré-équipement
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary transition-colors inline-block">
+                <a href="#solutions" className="hover:text-secondary transition-colors inline-block">
                   Supervision
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary transition-colors inline-block">
+                <a href="#solutions" className="hover:text-secondary transition-colors inline-block">
                   Maintenance
                 </a>
               </li>
@@ -137,11 +208,11 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <i className="fas fa-map-marker-alt mt-1 mr-3 w-5 text-center text-secondary"></i>
-                <span>123 Avenue de l'Électricité<br/>75000 Paris, France</span>
+                <span>3 Av. des Orangers<br/>94380 Bonneuil-sur-Marne, France</span>
               </li>
               <li className="flex items-start">
                 <i className="fas fa-phone-alt mt-1 mr-3 w-5 text-center text-secondary"></i>
-                <span>01 23 45 67 89</span>
+                <span>01 80 91 90 80</span>
               </li>
               <li className="flex items-start">
                 <i className="fas fa-envelope mt-1 mr-3 w-5 text-center text-secondary"></i>
@@ -151,12 +222,30 @@ const Footer = () => {
             
             <div className="mt-8">
               <h4 className="font-semibold mb-3">Newsletter</h4>
-              <div className="flex">
-                <input type="email" placeholder="Votre email" className="px-4 py-2 bg-white/10 text-white rounded-l-md focus:outline-none w-full" />
-                <button className="bg-secondary hover:bg-green-600 text-white py-2 px-4 rounded-r-md transition-colors">
-                  <i className="fas fa-paper-plane"></i>
+              <form onSubmit={handleNewsletterSubmit} className="flex">
+                <input 
+                  type="email" 
+                  placeholder="Votre email" 
+                  className="px-4 py-2 bg-white/10 text-white rounded-l-md focus:outline-none w-full"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  disabled={isSubmitting}
+                />
+                <button 
+                  type="submit"
+                  className="bg-secondary hover:bg-green-600 text-white py-2 px-4 rounded-r-md transition-colors flex items-center justify-center min-w-[48px]"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <i className="fas fa-spinner fa-spin"></i>
+                  ) : (
+                    <i className="fas fa-paper-plane"></i>
+                  )}
                 </button>
-              </div>
+              </form>
+              <p className="text-xs text-gray-400 mt-2">
+                Recevez nos conseils et actualités sur la mobilité électrique
+              </p>
             </div>
           </div>
         </div>

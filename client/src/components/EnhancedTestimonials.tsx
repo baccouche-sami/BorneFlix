@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import PartnerLogos from './PartnerLogos';
 
 interface Testimonial {
   id: number;
@@ -14,30 +15,30 @@ interface Testimonial {
 const testimonialData: Testimonial[] = [
   {
     id: 1,
-    name: "Marie Dupont",
-    position: "Présidente du Conseil Syndical",
-    company: "Résidence Les Oliviers",
-    text: "Grâce à BorneFlix, notre copropriété est désormais équipée de 12 bornes de recharge. L'étude technique était précise et l'accompagnement pour le vote en AG a été déterminant. Le service après-vente est également impeccable.",
+    name: "Claire Moreau",
+    position: "Présidente de copropriété",
+    company: "Copropriété",
+    text: "Nous avons installé une solution collective avec Borne Flix dans notre immeuble. Très bon accompagnement, présentation claire en AG, et aucun stress pour la gestion des démarches.",
     rating: 5,
-    image: "/images/gallery/images-13.png"
+    image: "/src/assets/user.png"
   },
   {
     id: 2,
-    name: "Philippe Martin",
-    position: "Syndic Professionnel",
-    company: "Cabinet Martin & Associés",
-    text: "En tant que syndic gérant plusieurs copropriétés, j'apprécie particulièrement la fiabilité et le professionnalisme de BorneFlix. Leurs solutions clé en main nous simplifient grandement la tâche, et les résidents sont ravis du résultat.",
+    name: "Yassine El Amrani",
+    position: "Gestionnaire de copropriétés",
+    company: "Copropriétés",
+    text: "Borne Flix nous fait gagner un temps précieux. Ils s’occupent de tout : étude, installation, relation avec les copropriétaires... Un vrai service clé en main que je recommande.",
     rating: 5,
-    image: "/images/gallery/images-1.png"
+    image: "/src/assets/user.png"
   },
   {
     id: 3,
-    name: "Sophie Legrand",
-    position: "Copropriétaire",
-    company: "Résidence Le Parc",
-    text: "J'hésitais à acheter une voiture électrique à cause des difficultés de recharge. Maintenant que notre immeuble est équipé par BorneFlix, je peux recharger facilement et en toute sécurité. Le système de facturation est transparent et équitable.",
+    name: "Rania Fantar",
+    position: "Propriétaire de véhicule électrique",
+    company: "Propriétaire",
+    text: "Je suis pleinement satisfait de l’installation de ma borne de recharge pour V.E par BORNE FLIX. Mr BEN MAATOUK et son équipe ont fait preuve d’un grand professionnalisme. Je recommande vivement !!",
     rating: 4,
-    image: "/images/gallery/images-4.png"
+    image: "/src/assets/user.png"
   }
 ];
 
@@ -102,7 +103,7 @@ const EnhancedTestimonials = () => {
   };
   
   return (
-    <section id="temoignages" className="py-24 bg-gradient-to-br from-[#f8fafc] to-white relative overflow-hidden">
+    <section id="temoignages" className="py-10 bg-gradient-to-br from-[#f8fafc] to-white relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-[#003566]/5 -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-64 h-64 rounded-full bg-[#8dc63f]/5 translate-x-1/4 translate-y-1/4"></div>
@@ -208,27 +209,10 @@ const EnhancedTestimonials = () => {
           </div>
         </div>
         
-        {/* Partner logos */}
-        <div className="mt-24">
-          <h3 className="text-center text-lg font-medium text-gray-700 mb-8">Ils nous font confiance</h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <div className="w-32 h-16 bg-white rounded-md shadow-sm flex items-center justify-center p-4 grayscale hover:grayscale-0 hover:shadow-md transition-all">
-              <div className="text-[#003566] font-bold text-lg">FoNCIÈRE</div>
-            </div>
-            <div className="w-32 h-16 bg-white rounded-md shadow-sm flex items-center justify-center p-4 grayscale hover:grayscale-0 hover:shadow-md transition-all">
-              <div className="text-[#003566] font-bold text-lg">NEXITY</div>
-            </div>
-            <div className="w-32 h-16 bg-white rounded-md shadow-sm flex items-center justify-center p-4 grayscale hover:grayscale-0 hover:shadow-md transition-all">
-              <div className="text-[#003566] font-bold text-lg">CITYA</div>
-            </div>
-            <div className="w-32 h-16 bg-white rounded-md shadow-sm flex items-center justify-center p-4 grayscale hover:grayscale-0 hover:shadow-md transition-all">
-              <div className="text-[#003566] font-bold text-lg">FONCIA</div>
-            </div>
-            <div className="w-32 h-16 bg-white rounded-md shadow-sm flex items-center justify-center p-4 grayscale hover:grayscale-0 hover:shadow-md transition-all">
-              <div className="text-[#003566] font-bold text-lg">ADVENIR</div>
-            </div>
-          </div>
-        </div>
+        
+
+
+       
       </div>
     </section>
   );

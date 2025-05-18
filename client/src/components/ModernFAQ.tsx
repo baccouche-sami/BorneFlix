@@ -24,7 +24,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, toggleOpen,
         className="w-full flex items-start justify-between p-6 text-left bg-white hover:bg-gray-50 transition-colors duration-300"
       >
         <div className="flex items-center">
-          <div className={`flex-shrink-0 w-10 h-10 rounded-full ${color.replace('border-l-4', 'bg')} flex items-center justify-center text-white mr-4`}>
+          <div className={`flex-shrink-0 w-10 h-10 rounded-full ${color.replace('border-l-4', 'bg')} text-${color} flex items-center justify-center  mr-4`}>
             <i className={`fas ${icon}`}></i>
           </div>
           <h3 className="text-xl font-semibold pr-8">{question}</h3>
@@ -68,37 +68,37 @@ const ModernFAQ = () => {
     {
       question: "Comment se déroule le processus d'installation en copropriété ?",
       answer: "Le processus commence par une étude technique gratuite, suivie d'une proposition adaptée à votre copropriété. Après approbation en assemblée générale, nous procédons à l'installation de l'infrastructure puis des bornes individuelles selon les besoins des résidents. Notre équipe vous accompagne à chaque étape, de l'étude initiale jusqu'à la mise en service.",
-      color: "border-l-4 border-[#003566]",
+      color: "border-l-4 border-[#003566] text-[#003566] bg-[#003566]/10",
       icon: "fa-building"
     },
     {
       question: "Quelles sont les aides financières disponibles ?",
       answer: "Plusieurs dispositifs d'aide existent, notamment le programme ADVENIR qui peut couvrir jusqu'à 50% des coûts d'installation pour l'infrastructure collective. Les particuliers peuvent également bénéficier de crédits d'impôt et d'aides locales. Notre équipe vous accompagne dans toutes les démarches administratives pour maximiser les aides auxquelles vous avez droit.",
-      color: "border-l-4 border-[#8dc63f]",
+      color: "border-l-4 border-[#8dc63f] text-[#8dc63f] bg-[#8dc63f]/10",
       icon: "fa-euro-sign"
     },
     {
       question: "Comment fonctionne la facturation de l'électricité ?",
       answer: "Notre système permet une facturation individuelle précise pour chaque utilisateur. Chaque borne est équipée d'un compteur intelligent qui mesure la consommation réelle, et les résidents sont facturés en fonction de leur utilisation effective. Un portail en ligne permet à chacun de suivre sa consommation et de recevoir des factures détaillées automatiquement.",
-      color: "border-l-4 border-purple-500",
+      color: "border-l-4 border-purple-500 text-purple-500 bg-purple-500/10",
       icon: "fa-file-invoice"
     },
     {
       question: "Que se passe-t-il en cas de panne ?",
       answer: "Nous proposons un service de maintenance avec différentes formules selon vos besoins. Notre équipe technique intervient rapidement en cas de dysfonctionnement. De plus, notre système de supervision à distance permet souvent de résoudre les problèmes sans déplacement. Une assistance téléphonique est également disponible 7j/7 pour les utilisateurs.",
-      color: "border-l-4 border-orange-500",
+      color: "border-l-4 border-orange-500 text-orange-500 bg-orange-500/10",
       icon: "fa-tools"
     },
     {
       question: "Quelles sont les puissances de charge disponibles ?",
       answer: "Nous proposons différentes puissances de charge, généralement de 3,7 kW à 22 kW, adaptées aux besoins des utilisateurs et aux contraintes techniques du bâtiment. Notre système de gestion dynamique de puissance optimise la répartition de l'énergie disponible entre les différentes bornes, évitant ainsi de surcharger l'installation électrique de la copropriété.",
-      color: "border-l-4 border-blue-500",
+      color: "border-l-4 border-blue-500 text-blue-500 bg-blue-500/10",
       icon: "fa-bolt"
     },
     {
       question: "Combien de temps prend l'installation complète ?",
       answer: "La durée d'installation varie selon la taille et la complexité de votre copropriété. En général, l'infrastructure collective prend entre 1 et 3 semaines, tandis que l'installation des bornes individuelles peut être réalisée en une journée par borne. Nous établissons un planning précis avec le syndic pour minimiser les perturbations pour les résidents.",
-      color: "border-l-4 border-yellow-500",
+      color: "border-l-4 border-yellow-500 text-yellow-500 bg-yellow-500/10",
       icon: "fa-clock"
     },
   ];
@@ -121,7 +121,7 @@ const ModernFAQ = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <div className="inline-block bg-[#003566]/10 text-[#003566] px-6 py-2 rounded-full text-sm font-medium mb-4">
+          <div className="inline-block bg-[#003566]/10 text-[#003566] px-6 py-2 rounded-full text-sm font-bold mb-4">
             POUR TOUT SAVOIR
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003566]">Questions fréquentes</h2>

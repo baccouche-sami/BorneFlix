@@ -7,7 +7,7 @@ const HeroSection = () => {
   const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
   
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-gradient-to-r from-[#003566] to-[#001d3d] text-white">
+    <section ref={sectionRef} className="relative overflow-hidden bg-gradient-to-r from-[#003566] to-[#001d3d] text-white pb-20">
       {/* Cercles décoratifs en arrière-plan */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#8dc63f]/10 blur-3xl -translate-y-1/2 translate-x-1/4"></div>
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-yellow-200/10 blur-3xl translate-y-1/4 -translate-x-1/4"></div>
@@ -32,8 +32,7 @@ const HeroSection = () => {
               </h1>
               
               <h2 className="text-xl md:text-2xl mb-8 font-light text-white/80">
-                <span className="font-medium text-[#8dc63f]">BorneFlix</span> est la solution de financement des infrastructures de recharge
-                de véhicules électriques en habitat collectif. Une solution <span className="font-medium">clé en main</span> à 
+                <span className="font-medium text-[#8dc63f]">BorneFlix</span> propose des installations de bornes de recharge pour véhicules électriques (IRVE), adaptées aux besoins de chaque client.. Une solution <span className="font-medium">clé en main</span> à 
                 moindre coût et <span className="font-medium">sans reste à charge</span> pour les copropriétés.
               </h2>
               
@@ -83,7 +82,7 @@ const HeroSection = () => {
                 
                 {/* Image principale */}
                 <img 
-                  src="/images/hero/recharge-img01.jpeg" 
+                  src="/src/assets/images/hero/recharge-img01.jpeg" 
                   alt="Personne utilisant une borne de recharge pour véhicule électrique" 
                   className="w-full h-full object-cover scale-110 z-10 relative"
                 />

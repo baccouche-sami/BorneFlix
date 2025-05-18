@@ -7,6 +7,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function Router() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Header />
         <Router />
         <Footer />
+        <ScrollToTop />
       </TooltipProvider>
     </QueryClientProvider>
   );

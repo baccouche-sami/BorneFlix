@@ -8,13 +8,13 @@ import circularImage from "@/assets/circular-image.svg";
 
 const Solutions = () => {
   return (
-    <section id="solutions" className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section id="solutions" className="py-10 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-tl-[200px] z-0"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-block bg-[#003566]/10 text-[#003566] px-4 py-1 rounded-full text-sm font-medium mb-4">
+          <div className="inline-block bg-[#003566]/10 text-[#003566] px-4 py-1 rounded-full text-sm font-bold mb-4">
             NOS SOLUTIONS DE RECHARGE
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003566]">
@@ -31,13 +31,13 @@ const Solutions = () => {
             <div className="h-56 overflow-hidden bg-primary/5 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-[#003566]/20 to-transparent z-10"></div>
               <img 
-                src="/images/gallery/pexels-kindelmedia-9800030.jpg" 
+                src="/src/assets/images/gallery/pexels-kindelmedia-9800030.jpg" 
                 alt="Infrastructure de recharge collective en copropriété"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
               />
             </div>
             <div className="p-6">
-              <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium mb-4">
+              <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold mb-4">
                 SOLUTION RECOMMANDÉE
               </div>
               <h3 className="text-xl font-bold mb-3 text-[#003566]">Infrastructure collective</h3>
@@ -68,13 +68,13 @@ const Solutions = () => {
             <div className="h-56 overflow-hidden bg-secondary/5 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-[#8dc63f]/20 to-transparent z-10"></div>
               <img 
-                src="/images/gallery/images-4.png" 
+                src="/src/assets/images/gallery/images-4.png" 
                 alt="Solution individuelle de recharge en copropriété"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
               />
             </div>
             <div className="p-6">
-              <div className="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-medium mb-4">
+              <div className="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-bold mb-4">
                 SOLUTION PROGRESSIVE
               </div>
               <h3 className="text-xl font-bold mb-3 text-[#003566]">Solution individuelle</h3>
@@ -105,7 +105,7 @@ const Solutions = () => {
             <div className="h-56 overflow-hidden bg-accent/5 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent z-10"></div>
               <img 
-                src="/images/gallery/images-1.png" 
+                src="/src/assets/images/gallery/images-1.png" 
                 alt="Pré-équipement pour bornes de recharge"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
               />
@@ -142,11 +142,11 @@ const Solutions = () => {
         {/* Detailed Solution - Infrastructure collective */}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-            <div className="lg:col-span-5 order-2 lg:order-1 p-8 lg:p-12 flex flex-col justify-center">
-              <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-6">
+            <div className="lg:col-span-7 order-2 lg:order-1 p-8 lg:p-12 flex flex-col justify-center">
+              <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-bold mb-6">
                 SOLUTION RECOMMANDÉE
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-[#003566]">Infrastructure collective intelligente</h3>
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-[#003566]">Infrastructure <span className="highlight-text">collective intelligente</span></h3>
               <p className="text-gray-700 mb-6">
                 Notre solution d'infrastructure collective permet d'équiper l'ensemble du parking de votre copropriété. Chaque résident peut ainsi disposer d'un point de charge individuel, connecté à un système de gestion intelligent.
               </p>
@@ -157,7 +157,7 @@ const Solutions = () => {
                     <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center mr-3">
                       <i className="fas fa-plug text-secondary"></i>
                     </div>
-                    <h4 className="font-medium text-gray-900">Installation</h4>
+                    <h4 className="font-bold text-gray-900">Installation</h4>
                   </div>
                   <p className="text-gray-600 text-sm">Infrastructure commune avec bornes individuelles par place</p>
                 </div>
@@ -167,7 +167,7 @@ const Solutions = () => {
                     <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center mr-3">
                       <i className="fas fa-bolt text-secondary"></i>
                     </div>
-                    <h4 className="font-medium text-gray-900">Puissance</h4>
+                    <h4 className="font-bold text-gray-900">Puissance</h4>
                   </div>
                   <p className="text-gray-600 text-sm">Gestion dynamique avec répartition intelligente</p>
                 </div>
@@ -177,7 +177,7 @@ const Solutions = () => {
                     <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center mr-3">
                       <i className="fas fa-euro-sign text-secondary"></i>
                     </div>
-                    <h4 className="font-medium text-gray-900">Financement</h4>
+                    <h4 className="font-bold text-gray-900">Financement</h4>
                   </div>
                   <p className="text-gray-600 text-sm">Aides ADVENIR maximisées jusqu'à 50% du montant</p>
                 </div>
@@ -187,7 +187,7 @@ const Solutions = () => {
                     <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center mr-3">
                       <i className="fas fa-tachometer-alt text-secondary"></i>
                     </div>
-                    <h4 className="font-medium text-gray-900">Gestion</h4>
+                    <h4 className="font-bold text-gray-900">Gestion</h4>
                   </div>
                   <p className="text-gray-600 text-sm">Supervision à distance, maintenance et facturation</p>
                 </div>
@@ -206,11 +206,11 @@ const Solutions = () => {
               </div>
             </div>
             
-            <div className="lg:col-span-7 order-1 lg:order-2 relative bg-primary/5 p-6">
+            <div className="lg:col-span-5 order-1 lg:order-2 relative bg-primary/5 p-6">
               <div className="relative flex items-center justify-center h-full overflow-hidden">
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 via-primary/20 to-secondary/30 rounded-lg blur-xl animate-pulse"></div>
                 <img 
-                  src="/images/gallery/images-13.png" 
+                  src="/src/assets/images/gallery/images-13.png" 
                   alt="Infrastructure de recharge collective en copropriété" 
                   className="relative max-w-full h-auto object-contain rounded-lg transform hover:scale-102 transition-transform duration-700"
                   style={{ maxHeight: '400px' }}
@@ -231,115 +231,7 @@ const Solutions = () => {
           </div>
         </div>
         
-        {/* FAQ Section */}
-        <div className="mb-20">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-block bg-secondary/10 text-secondary px-4 py-1 rounded-full text-sm font-medium mb-4">
-              QUESTIONS FRÉQUENTES
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#003566]">Les questions que vous vous posez</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-              <h3 className="text-lg font-semibold mb-3 text-[#003566] flex items-center">
-                <i className="fas fa-question-circle text-secondary mr-3"></i>
-                Quelle solution privilégier ?
-              </h3>
-              <p className="text-gray-600">
-                Pour répondre à la demande immédiate et anticiper les prochaines connexions, l'infrastructure collective est la solution la plus économique et la plus adaptée.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-              <h3 className="text-lg font-semibold mb-3 text-[#003566] flex items-center">
-                <i className="fas fa-question-circle text-secondary mr-3"></i>
-                Comment ne pas faire supporter le coût à la copropriété ?
-              </h3>
-              <p className="text-gray-600">
-                Grâce aux aides ADVENIR et à notre système de facturation individuelle, seuls les utilisateurs des bornes paient pour leur consommation électrique.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-              <h3 className="text-lg font-semibold mb-3 text-[#003566] flex items-center">
-                <i className="fas fa-question-circle text-secondary mr-3"></i>
-                Comment financer le projet ?
-              </h3>
-              <p className="text-gray-600">
-                BorneFlix vous accompagne dans les démarches d'obtention des aides financières ADVENIR qui peuvent couvrir jusqu'à 50% du coût total d'installation.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-              <h3 className="text-lg font-semibold mb-3 text-[#003566] flex items-center">
-                <i className="fas fa-question-circle text-secondary mr-3"></i>
-                Quelles démarches auprès du syndic ?
-              </h3>
-              <p className="text-gray-600">
-                Notre équipe s'occupe de toutes les démarches administratives, depuis la présentation du projet en assemblée générale jusqu'à l'installation des bornes.
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        {/* Testimonial section */}
-        <div className="bg-[#003566]/5 rounded-2xl p-8 mb-16">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <div className="inline-block bg-secondary/10 text-secondary px-4 py-1 rounded-full text-sm font-medium mb-4">
-                TÉMOIGNAGES CLIENTS
-              </div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-2 text-[#003566]">Ce que disent nos clients</h2>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="flex space-x-4 mb-4">
-                  <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center text-secondary text-2xl">
-                    <i className="fas fa-user"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg text-[#003566]">Jean Dupont</h4>
-                    <p className="text-gray-500 text-sm">Syndic de copropriété, Paris 15ème</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  "L'installation s'est déroulée parfaitement, sans perturbation pour les résidents. Le système est fiable et la facturation est transparente. Nous sommes très satisfaits."
-                </p>
-                <div className="flex text-yellow-400">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                </div>
-              </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="flex space-x-4 mb-4">
-                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary text-2xl">
-                    <i className="fas fa-user"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg text-[#003566]">Marie Laurent</h4>
-                    <p className="text-gray-500 text-sm">Présidente de conseil syndical, Lyon</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  "Toute la résidence est satisfaite de l'installation. Le système de gestion dynamique de la puissance fonctionne parfaitement et nous n'avons eu aucun problème d'alimentation."
-                </p>
-                <div className="flex text-yellow-400">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star-half-alt"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      
         
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-[#003566] to-[#1a4d85] rounded-2xl p-8 md:p-12 mb-12 relative overflow-hidden">
@@ -359,7 +251,7 @@ const Solutions = () => {
                   </Button>
                 </a>
                 <a href="#contact">
-                  <Button variant="outline" className="border-2 border-white text-white hover:bg-white/10 font-medium py-3 px-8 rounded-full transition-all duration-300 w-full sm:w-auto">
+                  <Button variant="outline" className="border-2 border-white text-[#003566] hover:bg-white/10 font-medium py-3 px-8 rounded-full transition-all duration-300 w-full sm:w-auto">
                     Nous contacter <i className="fas fa-arrow-right ml-2"></i>
                   </Button>
                 </a>

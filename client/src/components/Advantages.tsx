@@ -1,16 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import featuresGridImage from "@/assets/features-grid.svg";
 
 const Advantages = () => {
   return (
-    <section id="avantages" className="py-16 bg-gray-100">
+    <section id="avantages" className="py-10 bg-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium mb-4">
+          <div className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-bold mb-4">
             NOS ATOUTS
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Les avantages de choisir Borne Flix</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#003566]">Les avantages de choisir <span className="highlight-text">Borne Flix</span></h2>
           <p className="text-lg">
             Faites confiance à notre expertise pour équiper votre copropriété avec des solutions de recharge adaptées et pérennes.
           </p>
@@ -58,18 +57,19 @@ const Advantages = () => {
           </Card>
         </div>
         
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <div className="bg-[#003566] rounded-xl overflow-hidden shadow-xl">
             <div className="p-6 text-white">
               <h3 className="text-2xl font-bold mb-2 text-center">Votre solution inclut</h3>
             </div>
             <img src={import.meta.env.DEV ? '/src/assets/installation.jpg' : '/images/reelles/installation.jpg'} alt="Fonctionnalités incluses" className="w-full h-48 object-cover" />
           </div>
-        </div>
+        </div> */} 
+        
         
         <div className="mt-12 text-center">
           <a href="#devis">
-            <Button className="bg-secondary hover:bg-green-600 text-white font-medium py-3 px-8 rounded-full shadow-lg shadow-secondary/20 transition-all duration-300 hover:translate-y-[-2px]">
+            <Button className="bg-secondary hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg shadow-secondary/20 transition-all duration-300 hover:translate-y-[-2px]">
               Obtenir un devis personnalisé
             </Button>
           </a>

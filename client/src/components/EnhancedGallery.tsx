@@ -83,7 +83,7 @@ const EnhancedGallery = () => {
   };
   
   return (
-    <section id="galerie" className="py-24 bg-gradient-to-br from-white to-gray-50">
+    <section id="galerie" className="py-4 bg-gradient-to-br from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block bg-[#8dc63f]/10 text-[#8dc63f] px-6 py-2 rounded-full text-sm font-medium mb-4">
