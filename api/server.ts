@@ -1,11 +1,12 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { registerRoutes } from "../server/routes";
+import { log } from "../server/vite";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Logging middleware
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -36,55 +37,41 @@ app.use((req, res, next) => {
   next();
 });
 
+// Initialize routes
+let routesInitialized = false;
+
 // Vercel Serverless Function handler
 export default async function handler(req: Request, res: Response) {
-  // Register routes
-  await registerRoutes(app);
+  try {
+    // Initialize routes only once
+    if (!routesInitialized) {
+      await registerRoutes(app);
+      routesInitialized = true;
+    }
 
-  // Error handling middleware
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
-
-    res.status(status).json({ message });
-    throw err;
-  });
-
-  // Handle the request
-  return new Promise((resolve, reject) => {
-    app(req, res, (err) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(undefined);
-      }
-    });
-  });
-}
-
-// Development server (only runs locally)
-if (process.env.NODE_ENV === "development" && !process.env.VERCEL) {
-  (async () => {
-    const server = await registerRoutes(app);
-
+    // Error handling middleware
     app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
       const status = err.status || err.statusCode || 500;
       const message = err.message || "Internal Server Error";
 
       res.status(status).json({ message });
-      throw err;
     });
 
-    // Setup Vite in development
-    await setupVite(app, server);
-
-    // Start development server
-    const port = process.env.PORT || 5005;
-    server.listen({
-      port: Number(port),
-      host: "0.0.0.0",
-    }, () => {
-      log(`Development server running on port ${port}`);
+    // Handle the request
+    return new Promise((resolve, reject) => {
+      app(req, res, (err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(undefined);
+        }
+      });
     });
-  })();
-}
+  } catch (error) {
+    console.error('Server error:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: "Internal server error" 
+    });
+  }
+} 
